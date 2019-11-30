@@ -1,18 +1,20 @@
-<div class="card">
-    <div>
-        <span>
-            <img [src]="tour.imagePath" alt="{{tour.name}}" class="img-responsive">
-        </span>
-    </div>
-    <div>{{tour.name}}</div>
-    <div>Kraj: {{tour.destinationCountry}}</div>
-    <div>Wylot: {{tour.startDate}}</div> 
-    <div>Powrót: {{tour.finishDate}}</div> 
-    <div>Cena: {{tour.price}}</div> 
-    <div>Ilość miejsc: {{tour.leftSeats}}</div> 
-    <div>Opis: {{tour.description}}</div>
-    <div>Ocena: </div>
-    <div>
-        <button class="btn btn-danger" (remove)="">Usuń</button>
+<div class="container-fluid">
+    <div class="card">
+        <div>
+            <span>
+                <img [src]="tour.imagePath" alt="{{tour.name}}" class="img-responsive">
+            </span>
+        </div>
+        <div>{{tour.name}}</div>
+        <div>Kraj: {{tour.destinationCountry}}</div>
+        <div>Wylot: {{tour.startDate}}</div>
+        <div>Powrót: {{tour.finishDate}}</div>
+        <div>Cena: {{tour.price}}</div>
+        <div>Ilość miejsc: {{tour.leftSeats}}</div>
+        <div>Opis: {{tour.description}}</div>
+        <div>Ocena: </div>
+        <div>
+            <button class="btn btn-danger" (click)="removeProduct()">Usuń</button>
+        </div>
     </div>
 </div>

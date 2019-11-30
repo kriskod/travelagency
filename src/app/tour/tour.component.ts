@@ -9,7 +9,7 @@ import { tourStructure } from '../models/tourStructure.model';
 export class TourComponent implements OnInit {
 
   @Input() tour: tourStructure
-  @Output() removeEvent = new EventEmitter<tourStructure>()
+  @Output() removeTour = new EventEmitter<tourStructure>()
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class TourComponent implements OnInit {
   }
 
   removeProduct() {
-    this.removeEvent.emit(this.tour)
+    this.removeTour.emit(this.tour)
   }
 
 }
