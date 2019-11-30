@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { tourStructure } from '../models/tourStructure.model';
-import { tourData } from '../models/tourData.model';
+import { tourData } from '../tour/tourData.model';
 import { TourService } from '../services/tour.service';
 
 @Component({
@@ -15,11 +15,11 @@ export class TourlistComponent implements OnInit {
   constructor(private tourService: TourService) { }
 
   getTours() {
-    this.tourService.getProducts()
+    this.tours = this.tourService.getProducts()
   }
 
   ngOnInit() {
-    //this.getTours()
+    this.getTours()
   }
 
   removeProduct(product: tourStructure) {

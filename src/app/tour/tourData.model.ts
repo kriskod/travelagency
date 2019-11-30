@@ -1,4 +1,4 @@
-import { tourStructure } from './tourStructure.model';
+import { tourStructure } from '../models/tourStructure.model';
 
 export const tourData: tourStructure[] = [
     {

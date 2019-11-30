@@ -8,12 +8,16 @@ import { tourStructure } from '../models/tourStructure.model';
 })
 export class TourComponent implements OnInit {
 
-  @Input() tour: tourStructure[]
+  @Input() tour: tourStructure
   @Output() removeEvent = new EventEmitter<tourStructure>()
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  removeProduct() {
+    this.removeEvent.emit(this.tour)
   }
 
 }
