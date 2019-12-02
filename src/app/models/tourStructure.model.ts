@@ -9,5 +9,5 @@ export interface tourStructure {
     leftSeats: number;
     description: string;
     imagePath: string;
-    rate?: number[];
+    rate?: [];
 }

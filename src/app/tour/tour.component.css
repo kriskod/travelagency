@@ -1,28 +1,27 @@
-
-.container-fluid {
-    box-sizing: border-box;
+.all {
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
 }
+
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 700px;
-    height: auto;
-    padding: 10px;
-    box-sizing: border-box;
-
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
 }
 
-img {
-    display: block;
-    width: 100%;
-    border-radius: 8px;
+.image {
+    width: 500px;
 }
 
-div {
-    text-align: center;
+.information {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
 }
+
+.rate {
+    width: 300px;
+}
+
+

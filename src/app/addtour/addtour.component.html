@@ -1,0 +1,42 @@
+<h3>Nowa wycieczka</h3>
+<form>
+    <div class="form-group">
+        <label for="name">Nazwa wycieczki: </label>
+        <input required maxlength="25" #name type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="name.touched && !name.valid">Podaj nazwę!</div>
+    </div>
+    <div class="form-group">
+        <label for="destination">Kraj: </label>
+        <input required minlength="3" maxlength="10"#destination type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="!destination.valid">Podaj kraj docelowy!</div>
+    </div>
+    <div class="form-group">
+        <label for="startDate">Data wylotu: </label>
+        <input #startDate type="date" class="form-control">
+        <div class="alert alert-danger" *ngIf="!startDate.valid">Podaj datę wylotu!</div>
+    </div>
+    <div class="form-group">
+        <label for="finishDate">Data powrotu: </label>
+        <input #finishDate type="date" class="form-control">
+        <div class="alert alert-danger" *ngIf="!finishDate.valid">Podaj datę powrotu!</div>
+    </div>
+    <div class="form-group">
+        <label for="price">Cena wycieczki: </label>
+        <input #price type="number" class="form-control">
+        <div class="alert alert-danger" *ngIf="!price.valid">Podaj cenę!</div>
+    </div>
+    <div class="form-group">
+        <label for="maxSeats">Ilość miejsc: </label>
+        <input #maxSeats type="date" class="form-control">
+        <div class="alert alert-danger" *ngIf="!maxSeats.valid">Podaj maksymalną ilość miejsc!</div>
+    </div>
+    <div class="form-group">
+        <label for="description">Opis: </label>
+        <input #description type="date" class="form-control">
+        <div class="alert alert-danger" *ngIf="!description.valid">Podaj opis!</div>
+    </div>
+    <div class="form-group">
+        <label for="img">Obraz: </label>
+        <input #img type="file" class="form-control">
+    </div>   
+</form>
