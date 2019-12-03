@@ -1,7 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { EventEmitter } from 'events';
-import { tourStructure } from '../models/tourStructure.model';
 
 @Component({
   selector: 'app-addtour',
@@ -9,8 +7,6 @@ import { tourStructure } from '../models/tourStructure.model';
   styleUrls: ['./addtour.component.css']
 })
 export class AddtourComponent implements OnInit {
-
-  //@Output() addTour: EventEmitter<tourStructure> = new EventEmitter();
 
   addTourForm: FormGroup
 

@@ -1,3 +1,15 @@
 .img-responsive {
     max-height: 80px;
 }
+
+.nav-link {
+    font-size: 22px;
+}
+
+.form-control {
+    max-width: 150px;
+}
+
+.nav-item {
+    justify-content: flex-end;
+}
