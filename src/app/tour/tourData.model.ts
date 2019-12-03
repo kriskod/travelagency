@@ -12,7 +12,7 @@ export const tourData: tourStructure[] = [
         leftSeats: 2,
         description: 'Opis tej wycieczki',
         imagePath: 'assets/malediwy.jpg',
-        rate: []
+        rate: 2.1
     },
 
     {
@@ -26,7 +26,7 @@ export const tourData: tourStructure[] = [
         leftSeats: 8,
         description: 'Opis wycieczki',
         imagePath: 'assets/malediwy.jpg',
-        rate: []
+        rate: 3.8
     },
 
     {
@@ -40,7 +40,7 @@ export const tourData: tourStructure[] = [
         leftSeats: 5,
         description: 'Opis wycieczki',
         imagePath: 'assets/malediwy.jpg',
-        rate: []
+        rate: 0
     },
 
     {
@@ -54,7 +54,7 @@ export const tourData: tourStructure[] = [
         leftSeats: 3,
         description: 'Opis wycieczki',
         imagePath: 'assets/malediwy.jpg',
-        rate: []
+        rate: 4.5
     },
 
     {
@@ -68,7 +68,7 @@ export const tourData: tourStructure[] = [
         leftSeats: 10,
         description: 'Opis wycieczki',
         imagePath: 'assets/malediwy.jpg',
-        rate: []
+        rate: 5
     },
 
     {
@@ -82,7 +82,7 @@ export const tourData: tourStructure[] = [
         leftSeats: 2,
         description: 'Opis wycieczki',
         imagePath: 'assets/malediwy.jpg',
-        rate: []
+        rate: 0
     },
 
     {
@@ -96,7 +96,7 @@ export const tourData: tourStructure[] = [
         leftSeats: 10,
         description: 'Opis wycieczki',
         imagePath: 'assets/malediwy.jpg',
-        rate: []
+        rate: 0
     },
 
     {
@@ -110,6 +110,6 @@ export const tourData: tourStructure[] = [
         leftSeats: 6,
         description: 'Opis wycieczki',
         imagePath: 'assets/malediwy.jpg',
-        rate: []
+        rate: 0
     }
 ]

@@ -1,43 +1,37 @@
-<div class="all">
-    <div class="card justify-content-sm-center" style="width: 80rem; display: inline-flex;">
-        <div class="image">
-            <img [src]="tour.imagePath" alt="{{tour.name}}" class="card-img rounded-lg">
-        </div>
-
-        <div class="information">
-            <div>{{tour.name}}</div>
-            <div>Kraj: {{tour.destinationCountry}}</div>
-            <div>Wylot: {{tour.startDate | date:'yyyy/MM/dd'}}</div>
-            <div>Powrót: {{tour.finishDate | date:'yyyy/MM/dd'}}</div>
-            <div>Cena: {{tour.price}}</div>
-            <div>Ilość miejsc: {{tour.leftSeats}}</div>
-        </div>
-
-        <div>
-            <div>Opis: {{tour.description}}</div>
-        </div>
-
-        <div class="rate">
-            <div>Ocena: </div>
-            <div>
-                <app-rating></app-rating>
-            </div>
-        </div>
-        <div class="d-flex">
-            <div class="d-flex flex-row justify-content-sm-center">
-                <div>
-                    <button [ngStyle]="{'visibility': (tour.leftSeats > 0 ? 'visible' : 'hidden')}"
-                        class="btn btn-success onHover" (click)="onTourBooked()" style="width: 50px;">+</button>
-                </div>
-                <div>
-                    <button [ngStyle]="{'visibility': (tour.leftSeats < tour.maxSeats ? 'visible' : 'hidden')}"
-                        class="btn btn-danger onHover" (click)="onTourCancelled()" style="width: 50px;">-</button>
+<div class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col" id="img">
+                <div class="img-responsive">
+                    <img [src]="tour.imagePath" alt="{{tour.name}}" class="card-img rounded-lg">
                 </div>
             </div>
-        </div>
-        <div class="p-2 d-flex flex-row justify-content-center">
-            <button class="btn btn-danger onHover" (click)="onProductRemoved()">Usuń</button>
+            <div class="col" id="info">
+                <div class="information">
+                    <div>{{tour.name}}</div>
+                    <div>Kraj: {{tour.destinationCountry}}</div>
+                    <div>Wylot: {{tour.startDate | date:'yyyy/MM/dd'}}</div>
+                    <div>Powrót: {{tour.finishDate | date:'yyyy/MM/dd'}}</div>
+                    <div>Cena: {{tour.price}}</div>
+                    <div>Ilość miejsc: {{tour.leftSeats}}</div>
+                    <div>Opis: {{tour.description}}</div>
+                </div>
+            </div>
+            <div class="col" id="rate">
+                <div>Ocena: {{tour.rate}}</div>
+                <star-rating [value]="tour.rate" totalstars="5" checkedcolor="gold" uncheckedcolor="gray" size="24px" readonly="false" (rate)="onRate($event)">
+                </star-rating>
+                <div class="column mt-2">
+                    <button [ngStyle]="{'visibility': (tour.leftSeats > 0 ? 'visible' : 'hidden')}" class="btn btn-primary onHover" (click)="onTourBooked()" style="width: 50px;">+</button>
+                    <button [ngStyle]="{'visibility': (tour.leftSeats < tour.maxSeats ? 'visible' : 'hidden')}" class="btn btn-primary onHover" (click)="onTourCancelled()" style="width: 50px;">-</button>
+                    <div class="mt-2">
+                        <button class="btn btn-success onHover" (click)="onProductBooked()">Zarezerwuj</button>
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-danger onHover" (click)="onProductRemoved()">Usuń</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>

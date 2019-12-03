@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { tourStructure } from '../models/tourStructure.model';
-import { RatingChangeEvent } from 'angular-star-rating';
 
 @Component({
   selector: 'app-tour',
@@ -28,8 +27,11 @@ export class TourComponent implements OnInit {
   }
 
   onTourCancelled(){
-    if(this.tour.leftSeats <= this.tour.maxSeats)
+    if(this.tour.leftSeats < this.tour.maxSeats)
     this.tour.leftSeats += 1
   }
-
+  
+  onRate($event: { oldRate: number, newRate: number }) {
+    this.tour.rate = $event.newRate;
+  }
 }
