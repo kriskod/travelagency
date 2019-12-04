@@ -6,10 +6,10 @@
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav justify-content-xl-end mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Strona Główna <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" (click)="onTourAdded()">Add new tour</a>
+                <a class="nav-link" href="#" (click)="onDialogOpened()">Dodaj nową wycieczke</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" (click)="onFilterClicked()">Filter</a>
@@ -18,10 +18,13 @@
                 <a class="nav-link" href="#" (click)="onCartClicked()">Cart</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="#" (click)="onLoginClicked()">Zaloguj</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link">
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <input class="form-control mr-sm-2" type="text" placeholder="Wyszukiwarka">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Szukaj</button>
                     </form>
                 </a>
             </li>

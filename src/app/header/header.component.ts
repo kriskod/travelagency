@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { TourService } from '../services/tour.service';
+import { tourStructure } from '../models/tourStructure.model';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  tours: tourStructure[] = [];
+  
+  constructor(private tourService: TourService) { }
+
+  onTourAdded(product: tourStructure){
+    this.tourService.addProduct(product)
+  }
+
+  onDialogOpened(){}
 
   ngOnInit() {
   }

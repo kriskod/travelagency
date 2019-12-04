@@ -1,51 +1,89 @@
 <h3>Nowa wycieczka</h3>
 <br>
 <form [formGroup]="addTourForm">
-    <div class="form-group">
-        <label>Nazwa wycieczki: </label>
-        <input #name type="text" class="form-control" formControlName="name">
-        <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
-            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-                <div class="small" *ngIf="name.errors['required']">Podaj nazwę
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Nazwa wycieczki: </label>
+                <input #name type="text" class="form-control" formControlName="name">
+                <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                        <div class="small" *ngIf="name.errors['required']">
+                            Podaj nazwę
+                        </div>
+                    </div>
+                    <div class="small" *ngIf="name.errors['minlength']">
+                        Nazwa wymaga co najmniej 3 znaków
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label>Kraj: </label>
-        <input required minlength="3" maxlength="10" #destination type="text" class="form-control">
-        <div class="alert alert-danger" *ngIf="!destination.valid">Podaj kraj docelowy!</div>
+        <div class="col-sm">
+            <label>Kraj: </label>
+            <input #destination type="text" class="form-control" formControlName="destination">
+            <div class="alert alert-danger" *ngIf="destination.touched && !name.valid">
+                <div *ngIf="destination.invalid && (destination.dirty || destination.touched)" class="alert alert-danger">
+                    <div class="small" *ngIf="destination.errors['required']">
+                        Podaj kraj docelowy
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Data wylotu: </label>
-        <input #startDate type="date" class="form-control">
-        <div class="alert alert-danger" *ngIf="!startDate.valid">Podaj datę wylotu!</div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Data wylotu: </label>
+                <input #startDate type="date" class="form-control" formControlName="startDate">
+            </div>
+            <div class="form-group">
+                <label>Data powrotu: </label>
+                <input #finishDate type="date" class="form-control" formControlName="finishDate">
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Data powrotu: </label>
-        <input #finishDate type="date" class="form-control">
-        <div class="alert alert-danger" *ngIf="!finishDate.valid">Podaj datę powrotu!</div>
-    </div>
-    <div class="form-group">
-        <label>Cena wycieczki: </label>
-        <input #price type="number" class="form-control">
-        <div class="alert alert-danger" *ngIf="!price.valid">Podaj cenę!</div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Cena wycieczki: </label>
+                <input #price type="number" class="form-control" formControlName="price">
+                <div class="small" *ngIf="price.errors['required']">
+                    Podaj cenę
+                </div>
+                <div class="small" *ngIf="price.errors['badFormat']">
+                    Zły format ceny
+                </div>
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label>Ilość miejsc: </label>
-        <input #maxSeats type="number" class="form-control">
-        <div class="alert alert-danger" *ngIf="!maxSeats.valid">Podaj maksymalną ilość miejsc!</div>
-    </div>
-    <div class="form-group">
-        <label>Opis: </label>
-        <textarea #description type="text" class="form-control" rows="4"></textarea>
-    </div>
-    <div class="form-group">
-        <label>Obraz: </label>
-        <input #img type="file" class="form-control">
-    </div>
-    <div class="d-flex flex-row justify-content-sm-between">
-        <button type="submit" class="btn btn-success" [disabled]="!addTourForm.valid" (click)="submit()">Powtierdź</button>
-        <button type="close" class="btn btn-primary" (click)="close()">Zamknij</button>
+        <input #maxSeats type="number" class="form-control" formControlName="maxSeats">
+        <div *ngIf="maxSeats.invalid && (maxSeats.dirty || maxSeats.touched)" class="alert alert-danger">
+            <div class="small" *ngIf="maxSeats.errors['required']">
+                Wymagana maksymalna liczba miejsc
+            </div>
+            <div class="small" *ngIf="maxSeats.errors['badFormat']">
+                Zły format liczby miejsc
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label>Opis: </label>
+                    <textarea #description type="text" class="form-control" rows="4" formControlName="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Obraz: </label>
+                    <input #img type="file" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-sm-between">
+            <button type="submit" class="btn btn-success" [disabled]="!addTourForm.valid" (click)="submitNewTour()">Powtierdź</button>
+            <button type="close" class="btn btn-primary" (click)="closeDialog()">Zamknij</button>
+        </div>
     </div>
 </form>

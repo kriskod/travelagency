@@ -32,6 +32,7 @@ import { MatDialogModule, MatDrawer, MatDrawerContent, MatSidenavModule } from '
     MatSidenavModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddtourComponent]
 })
 export class AppModule { }

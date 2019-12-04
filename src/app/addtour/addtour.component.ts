@@ -31,12 +31,12 @@ export class AddtourComponent implements OnInit {
   this.addTourForm.controls['startDate'].setValue(new Date())
   }
 
-  submit() {
+  submitNewTour() {
     this.tourDialogRef.close(this.addTourForm.value)
   }
 
-  close() {
+  closeDialog() {
     this.tourDialogRef.close()
   }
-
+  
 }
