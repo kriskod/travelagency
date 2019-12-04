@@ -12,7 +12,7 @@ export class TourComponent implements OnInit {
   @Input() tour: tourStructure
   @Output() removeTour = new EventEmitter<tourStructure>()
 
-  constructor(private ShoppingCart: ShoppingcartService) { }
+  constructor(private ShoppingCartService: ShoppingcartService) { }
 
   ngOnInit() {
   }
@@ -37,6 +37,6 @@ export class TourComponent implements OnInit {
 
   onCartAdded(tour){
     console.log("Dodano do koszyka")
-    this.ShoppingCart.addCartProduct(tour)
+    this.ShoppingCartService.addCartProduct(this.tour)
   }
 }
