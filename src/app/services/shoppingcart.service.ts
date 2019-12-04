@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { tourStructure } from '../models/tourStructure.model';
-import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,45 +9,42 @@ export class ShoppingcartService {
   constructor() { }
 
   private cartProducts: tourStructure[] = []
-  public products = new Subject()
 
+  //Lista produktów do koszyka
   getCartProducts(): tourStructure[] {
     return this.cartProducts;
   }
-
+  //Pobierz produkt z koszyka
   getCartProduct(id: number): tourStructure {
     return this.cartProducts[id];
   }
-
+  //Dodaj produkt do koszyka
   addCartProduct(product: tourStructure) {
+    let cartItem = this.cartProducts.find(prod => prod.id == product.id)
+    console.log(cartItem)
+    if (cartItem)
+      cartItem.quantity += 1;
+    else {
+      product.quantity = 1;
       this.cartProducts.push(product);
+    }
   }
-
-  deleteFromCart(product: tourStructure) {
+  //Usuń produkt z koszyka
+  removeProductFromCart(product: tourStructure) {
     let index = this.cartProducts.indexOf(product)
     if (index > -1) {
       this.cartProducts.splice(index, 1)
     }
   }
-  //Obecnie używana
-  removeProductFromCart(productId) {
-    this.cartProducts.map((item, index) => {
-      if (item.id === productId) {
-        this.cartProducts.splice(index, 1);
-      }
-    });
-
-    this.products.next(this.cartProducts);
-  }
-
+  //Opróżnij koszyk
   emptyCart() {
     this.cartProducts.length = 0;
   }
-
+  //Całkowita cena 
   getTotalPrice(){
     let total = 0
     this.cartProducts.map(item => {
-      total +=item.price
+      total += item.price
     })
     return total
   }

@@ -9,10 +9,11 @@
         </li>
     </ul>
     <div class="cart-total">
-        <p><button type="button" class="btn btn-outline-primary btn-sm" (click)="emptyCart()">Opróżnij koszyk</button></p>
+        <p><button type="button" class="btn btn-outline-primary btn-sm" (click)="removeFromCart()">Opróżnij koszyk</button></p>
         <p class="text-right">
             <strong class="d-block">Total:</strong>
             <span class="d-block">{{totalAmmount}}</span>
         </p>
     </div>
+    <button routerLink="" routerLinkActive="active" class="btn btn-dark">Do kasy</button>
 </div>

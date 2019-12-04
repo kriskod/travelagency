@@ -13,7 +13,7 @@ export class ShoppingcartComponent implements OnInit {
 
   constructor( private ShoppingCartService: ShoppingcartService) {}
 
-  private totalAmmount;
+  private totalAmmount = 0;
 
   //Wyświetlanie produktów w koszyku
   ngOnInit() {
@@ -28,11 +28,6 @@ export class ShoppingcartComponent implements OnInit {
   }
 
   // //Usuwanie produktu z  koszyka
-  // removeFromCart(productId){
-  //   window.alert('Wyczyszczono koszyk')
-  //   this.ShoppingCartService.removeProductFromCart(productId)
-  // }
-
   removeFromCart(product: tourStructure){
     window.alert('Wyczyszczono koszyk')
     this.ShoppingCartService.removeProductFromCart(product)
@@ -46,6 +41,7 @@ export class ShoppingcartComponent implements OnInit {
   //Całkowita cena zamówienia 
   totalPrice(){
     this.totalAmmount = this.ShoppingCartService.getTotalPrice()
+    return this.totalAmmount
   }
 
 }

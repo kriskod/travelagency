@@ -5,7 +5,7 @@ import { HeaderComponent } from './header/header.component';
 
 
 const routes: Routes = [
-  { path: 'shoppingCart', component: ShoppingcartComponent },
+  { path: 'ShoppingCart', component: ShoppingcartComponent },
   { path: 'header', component: HeaderComponent}
 ];
 
