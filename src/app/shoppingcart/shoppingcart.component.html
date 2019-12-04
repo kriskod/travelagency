@@ -1,0 +1,18 @@
+<div class="product-cart" *ngIf="product && products.length > 0">
+    <ul>
+        <li *ngFor="let product of products">
+            <img class="card-img-top" src="{{ product.imagePath }}"> {{product.name}}
+            <span>{{product.price}}</span>
+            <button type="button" class="close" aria-label="Remove Item" (click)="removeProductFromCart(product.id)">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </li>
+    </ul>
+    <div class="cart-total">
+        <p><button type="button" class="btn btn-outline-primary btn-sm" (click)="emptyCart()">Opróżnij koszyk</button></p>
+        <p class="text-right">
+            <strong class="d-block">Total:</strong>
+            <span class="d-block">{{totalAmmount}}</span>
+        </p>
+    </div>
+</div>

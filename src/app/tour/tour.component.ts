@@ -10,7 +10,7 @@ export class TourComponent implements OnInit {
 
   @Input() tour: tourStructure
   @Output() removeTour = new EventEmitter<tourStructure>()
- 
+
   constructor() { }
 
   ngOnInit() {

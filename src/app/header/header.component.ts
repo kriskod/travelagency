@@ -3,6 +3,7 @@ import { TourService } from '../services/tour.service';
 import { tourStructure } from '../models/tourStructure.model';
 import { MatDialog } from '@angular/material';
 import { AddtourComponent } from '../addtour/addtour.component';
+import { ShoppingcartService } from '../services/shoppingcart.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,9 @@ import { AddtourComponent } from '../addtour/addtour.component';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private tourService: TourService, private dialog: MatDialog) {
+  private cartProductCount: number = 0;
+
+  constructor(private tourService: TourService, private dialog: MatDialog, private cartService: ShoppingcartService) {
 
   }
 
@@ -30,6 +33,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

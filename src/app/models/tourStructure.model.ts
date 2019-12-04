@@ -10,4 +10,5 @@ export interface tourStructure {
     description: string;
     imagePath: string;
     rate?: number;
+    quantity?: number
 }

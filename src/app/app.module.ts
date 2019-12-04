@@ -11,6 +11,8 @@ import { AddtourComponent } from './addtour/addtour.component';
 import { RatingModule } from 'ng-starrating';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule, MatDrawer, MatDrawerContent, MatSidenavModule } from '@angular/material';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { MatDialogModule, MatDrawer, MatDrawerContent, MatSidenavModule } from '
     HeaderComponent,
     TourlistComponent,
     TourComponent,
-    AddtourComponent
+    AddtourComponent,
+    ShoppingcartComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { MatDialogModule, MatDrawer, MatDrawerContent, MatSidenavModule } from '
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
-    MatSidenavModule
+    MatSidenavModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
