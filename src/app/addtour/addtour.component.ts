@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { tourStructure } from '../models/tourStructure.model';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-addtour',
@@ -8,9 +10,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddtourComponent implements OnInit {
 
+  @Output() addTrip: EventEmitter<tourStructure> = new EventEmitter();
+
   addTourForm: FormGroup
 
-  constructor() { }
+  constructor(private tourDialogRef: MatDialogRef<AddtourComponent>) { }
 
   ngOnInit() {
   this.addTourForm = new FormGroup({
@@ -27,5 +31,12 @@ export class AddtourComponent implements OnInit {
   this.addTourForm.controls['startDate'].setValue(new Date())
   }
 
+  submit() {
+    this.tourDialogRef.close(this.addTourForm.value)
+  }
+
+  close() {
+    this.tourDialogRef.close()
+  }
 
 }

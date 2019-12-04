@@ -20,10 +20,9 @@ export class TourComponent implements OnInit {
     this.removeTour.emit(this.tour)
   }
 
-  onTourbooked(){
-    if(this.tour.leftSeats > 0){
+  onTourBooked(){
+    if(this.tour.leftSeats > 0)
       this.tour.leftSeats -= 1
-    }
   }
 
   onTourCancelled(){

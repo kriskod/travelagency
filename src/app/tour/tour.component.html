@@ -1,23 +1,24 @@
 <div class="container">
     <div class="card">
         <div class="row">
-            <div class="col" id="img">
+            <div class="col-md-5" id="img">
                 <div class="img-responsive">
                     <img [src]="tour.imagePath" alt="{{tour.name}}" class="card-img rounded-lg">
                 </div>
             </div>
-            <div class="col" id="info">
+            <div class="col-md-4" id="info">
                 <div class="information">
-                    <div>{{tour.name}}</div>
+                    <h3>{{tour.name || uppercase}}</h3>
                     <div>Kraj: {{tour.destinationCountry}}</div>
                     <div>Wylot: {{tour.startDate | date:'yyyy/MM/dd'}}</div>
                     <div>Powrót: {{tour.finishDate | date:'yyyy/MM/dd'}}</div>
                     <div>Cena: {{tour.price}}</div>
                     <div>Ilość miejsc: {{tour.leftSeats}}</div>
+                    <div>Wybrano: {{tour.maxSeats - tour.leftSeats}}</div>
                     <div>Opis: {{tour.description}}</div>
                 </div>
             </div>
-            <div class="col" id="rate">
+            <div class="col-md" id="rate">
                 <div>Ocena: {{tour.rate}}</div>
                 <star-rating [value]="tour.rate" totalstars="5" checkedcolor="gold" uncheckedcolor="gray" size="24px" readonly="false" (rate)="onRate($event)">
                 </star-rating>
@@ -34,4 +35,5 @@
             </div>
         </div>
     </div>
+    <br>
 </div>

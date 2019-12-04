@@ -1,42 +1,51 @@
 <h3>Nowa wycieczka</h3>
-<form>
+<br>
+<form [formGroup]="addTourForm">
     <div class="form-group">
-        <label for="name">Nazwa wycieczki: </label>
-        <input required maxlength="25" #name type="text" class="form-control">
-        <div class="alert alert-danger" *ngIf="name.touched && !name.valid">Podaj nazwę!</div>
+        <label>Nazwa wycieczki: </label>
+        <input #name type="text" class="form-control" formControlName="name">
+        <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div class="small" *ngIf="name.errors['required']">Podaj nazwę
+                </div>
+            </div>
+        </div>
     </div>
     <div class="form-group">
-        <label for="destination">Kraj: </label>
-        <input required minlength="3" maxlength="10"#destination type="text" class="form-control">
+        <label>Kraj: </label>
+        <input required minlength="3" maxlength="10" #destination type="text" class="form-control">
         <div class="alert alert-danger" *ngIf="!destination.valid">Podaj kraj docelowy!</div>
     </div>
     <div class="form-group">
-        <label for="startDate">Data wylotu: </label>
+        <label>Data wylotu: </label>
         <input #startDate type="date" class="form-control">
         <div class="alert alert-danger" *ngIf="!startDate.valid">Podaj datę wylotu!</div>
     </div>
     <div class="form-group">
-        <label for="finishDate">Data powrotu: </label>
+        <label>Data powrotu: </label>
         <input #finishDate type="date" class="form-control">
         <div class="alert alert-danger" *ngIf="!finishDate.valid">Podaj datę powrotu!</div>
     </div>
     <div class="form-group">
-        <label for="price">Cena wycieczki: </label>
+        <label>Cena wycieczki: </label>
         <input #price type="number" class="form-control">
         <div class="alert alert-danger" *ngIf="!price.valid">Podaj cenę!</div>
     </div>
     <div class="form-group">
-        <label for="maxSeats">Ilość miejsc: </label>
-        <input #maxSeats type="date" class="form-control">
+        <label>Ilość miejsc: </label>
+        <input #maxSeats type="number" class="form-control">
         <div class="alert alert-danger" *ngIf="!maxSeats.valid">Podaj maksymalną ilość miejsc!</div>
     </div>
     <div class="form-group">
-        <label for="description">Opis: </label>
-        <input #description type="date" class="form-control">
-        <div class="alert alert-danger" *ngIf="!description.valid">Podaj opis!</div>
+        <label>Opis: </label>
+        <textarea #description type="text" class="form-control" rows="4"></textarea>
     </div>
     <div class="form-group">
-        <label for="img">Obraz: </label>
+        <label>Obraz: </label>
         <input #img type="file" class="form-control">
-    </div>   
+    </div>
+    <div class="d-flex flex-row justify-content-sm-between">
+        <button type="submit" class="btn btn-success" [disabled]="!addTourForm.valid" (click)="submit()">Powtierdź</button>
+        <button type="close" class="btn btn-primary" (click)="close()">Zamknij</button>
+    </div>
 </form>

@@ -1,5 +1,6 @@
 .card {
     max-width: auto;
+    max-height: auto;
 }
 
 
@@ -21,11 +22,6 @@
     max-width: 500px;
     justify-content: center;
 }
-
-
-/* #rate {
-    margin: 20px 20px 20px 120px;
-} */
 
 .row {
     -webkit-flex-direction: row;
