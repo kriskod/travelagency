@@ -18,8 +18,8 @@ export class TourService {
   }
 
   addProduct(product: tourStructure) {
-    if (!product.name)
-      product.name = 'Tajlandia';
+    // if (!product.name)
+    //   product.name = 'Tajlandia';
     tourData.push(product);
   }
 

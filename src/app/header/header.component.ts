@@ -1,6 +1,8 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { TourService } from '../services/tour.service';
 import { tourStructure } from '../models/tourStructure.model';
+import { MatDialog } from '@angular/material';
+import { AddtourComponent } from '../addtour/addtour.component';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +11,23 @@ import { tourStructure } from '../models/tourStructure.model';
 })
 export class HeaderComponent implements OnInit {
 
-  tours: tourStructure[] = [];
-  
-  constructor(private tourService: TourService) { }
+  constructor(private tourService: TourService, private dialog: MatDialog) {
 
-  onTourAdded(product: tourStructure){
+  }
+
+  onTourAdded(product: tourStructure) {
     this.tourService.addProduct(product)
   }
 
-  onDialogOpened(){}
+  onDialogOpened() {
+    let dialogRef = this.dialog.open(AddtourComponent, {});
+
+    dialogRef.afterClosed().subscribe(
+      (tour: tourStructure) => {
+        console.log(tour);
+        this.tourService.addProduct(tour)
+      });
+  }
 
   ngOnInit() {
   }

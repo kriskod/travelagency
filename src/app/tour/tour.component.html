@@ -1,39 +1,42 @@
 <div class="container">
-    <div class="card">
-        <div class="row">
-            <div class="col-md-5" id="img">
-                <div class="img-responsive">
-                    <img [src]="tour.imagePath" alt="{{tour.name}}" class="card-img rounded-lg">
-                </div>
-            </div>
-            <div class="col-md-4" id="info">
-                <div class="information">
-                    <h3>{{tour.name || uppercase}}</h3>
-                    <div>Kraj: {{tour.destinationCountry}}</div>
-                    <div>Wylot: {{tour.startDate | date:'yyyy/MM/dd'}}</div>
-                    <div>Powrót: {{tour.finishDate | date:'yyyy/MM/dd'}}</div>
-                    <div>Cena: {{tour.price}}</div>
-                    <div>Ilość miejsc: {{tour.leftSeats}}</div>
-                    <div>Wybrano: {{tour.maxSeats - tour.leftSeats}}</div>
-                    <div>Opis: {{tour.description}}</div>
-                </div>
-            </div>
-            <div class="col-md" id="rate">
-                <div>Ocena: {{tour.rate}}</div>
-                <star-rating [value]="tour.rate" totalstars="5" checkedcolor="gold" uncheckedcolor="gray" size="24px" readonly="false" (rate)="onRate($event)">
-                </star-rating>
-                <div class="column mt-2">
-                    <button [ngStyle]="{'visibility': (tour.leftSeats > 0 ? 'visible' : 'hidden')}" class="btn btn-primary onHover" (click)="onTourBooked()" style="width: 50px;">+</button>
-                    <button [ngStyle]="{'visibility': (tour.leftSeats < tour.maxSeats ? 'visible' : 'hidden')}" class="btn btn-primary onHover" (click)="onTourCancelled()" style="width: 50px;">-</button>
-                    <div class="mt-2">
-                        <button class="btn btn-success onHover" (click)="onProductBooked()">Zarezerwuj</button>
-                    </div>
-                    <div class="mt-2">
-                        <button class="btn btn-danger onHover" (click)="onProductRemoved()">Usuń</button>
-                    </div>
-                </div>
-            </div>
+  <div class="card">
+    <div class="row">
+      <div class="col-md-5" id="img">
+        <div class="img-responsive">
+          <img [src]="tour.imagePath" alt="{{tour.name}}" class="card-img rounded-lg">
         </div>
+      </div>
+      <div class="col-md-4 mt-4" id="info">
+        <div class="information">
+          <h3>{{tour?.name || uppercase}}</h3>
+          <div>Kraj: {{tour?.destinationCountry}}</div>
+          <div>Wylot: {{tour?.startDate | date:'yyyy/MM/dd'}}</div>
+          <div>Powrót: {{tour?.finishDate | date:'yyyy/MM/dd'}}</div>
+          <div>Cena: {{tour?.price}}</div>
+          <div>Ilość miejsc: {{tour?.leftSeats}}</div>
+          <div>Wybrano: {{tour?.maxSeats - tour?.leftSeats}}</div>
+          <div>Opis: {{tour?.description}}</div>
+        </div>
+      </div>
+      <div class="col-md mt mt-4" id="rate">
+        <div>Ocena: {{tour?.rate}}</div>
+        <star-rating [value]="tour.rate" totalstars="5" checkedcolor="gold" uncheckedcolor="gray" size="24px"
+          readonly="false" (rate)="onRate($event)">
+        </star-rating>
+        <div class="column mt-2">
+          <button [ngStyle]="{'visibility': (tour.leftSeats > 0 ? 'visible' : 'hidden')}"
+            class="btn btn-primary onHover" (click)="onTourBooked()" style="width: 50px;">+</button>
+          <button [ngStyle]="{'visibility': (tour.leftSeats < tour.maxSeats ? 'visible' : 'hidden')}"
+            class="btn btn-primary onHover" (click)="onTourCancelled()" style="width: 50px;">-</button>
+          <div class="mt-2">
+            <button class="btn btn-success onHover" (click)="onProductBooked()">Zarezerwuj</button>
+          </div>
+          <div class="mt-2">
+            <button class="btn btn-danger onHover" (click)="onProductRemoved()">Usuń</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <br>
+  </div>
+  <br>
 </div>
