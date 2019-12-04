@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule, MatDrawer, MatDrawerContent, MatSidenavModule } from '@angular/material';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
     TourlistComponent,
     TourComponent,
     AddtourComponent,
-    ShoppingcartComponent
+    ShoppingcartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
