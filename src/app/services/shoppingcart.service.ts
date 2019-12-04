@@ -20,10 +20,10 @@ export class ShoppingcartService {
   }
   //Dodaj produkt do koszyka
   addCartProduct(product: tourStructure) {
-    let cartItem = this.cartProducts.find(prod => prod.id == product.id)
-    console.log(cartItem)
-    if (cartItem)
-      cartItem.quantity += 1;
+    let cartProduct = this.cartProducts.find(prod => prod.id == product.id)
+    console.log(cartProduct)
+    if (cartProduct)
+      cartProduct.quantity += 1;
     else {
       product.quantity = 1;
       this.cartProducts.push(product);
@@ -41,7 +41,7 @@ export class ShoppingcartService {
     this.cartProducts.length = 0;
   }
   //Całkowita cena 
-  getTotalPrice(){
+  getTotalPrice() {
     let total = 0
     this.cartProducts.map(item => {
       total += item.price
