@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand">SUPER BIURO</a>
+        <a class="navbar-brand"><img class="img-fluid bg-dark" src="assets/logo2.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -14,10 +14,10 @@
                     <a class="nav-link clickable" (click)="onDialogOpened()">Dodaj wycieczke</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link clickable" (click)="onFilterClicked()">Filtr</a>
+                    <a class="nav-link clickable" (click)="onFilterClicked()" routerLink="/Filer">Filtr</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link clickable" (click)="onLoginClicked()">Zaloguj</a>
+                    <a class="nav-link clickable" (click)="onLoginClicked()" routerLink="">Zaloguj</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link clickable">Kontakt</a>

@@ -14,6 +14,7 @@ import { MatDialogModule, MatDrawer, MatDrawerContent, MatSidenavModule } from '
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
+import { TourdetailComponent } from './tourdetail/tourdetail.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FooterComponent } from './footer/footer.component';
     TourComponent,
     AddtourComponent,
     ShoppingcartComponent,
-    FooterComponent
+    FooterComponent,
+    TourdetailComponent
   ],
   imports: [
     BrowserModule,

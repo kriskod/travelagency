@@ -10,7 +10,7 @@ import { ShoppingcartService } from '../services/shoppingcart.service';
 export class ShoppingcartComponent implements OnInit {
 
   private products: tourStructure[] = []
-
+  
   constructor( private ShoppingCartService: ShoppingcartService) {}
 
   private totalAmmount = 0;
