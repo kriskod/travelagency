@@ -28,14 +28,9 @@ export class ShoppingcartComponent implements OnInit {
   }
 
   // //Usuwanie produktu z  koszyka
-  removeFromCart(product: tourStructure){
+  removeFromCart(productId){
     window.alert('Wyczyszczono koszyk')
-    this.ShoppingCartService.removeProductFromCart(product)
-  }
-
-  //Czyszczenie koszyka
-  cleanCart(){
-    this.ShoppingCartService.emptyCart()
+    this.ShoppingCartService.removeProductFromCart(productId)
   }
 
   //Całkowita cena zamówienia 

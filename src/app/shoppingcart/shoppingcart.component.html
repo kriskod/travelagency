@@ -37,11 +37,13 @@
                 <table class="table table-striped">
                     <tbody>
                         <tr>
-                            <td><img src="assets/malediwy.jpg" height="100" width="150" /></td>
-                            <td>{{product.name}}</td>
-                            <td>Tak</td>
-                            <td><input class="form-control input-sm" type="number" min="0" /></td>
-                            <td class="text-right">{{product.price}}</td>
+                            <td style="width: 300px;"><img src="assets/malediwy.jpg" height="100" width="150" /></td>
+                            <td style="width: 242px;">{{product.name}}</td>
+
+                            <td style="width: 442px;" class="text-center">Tak</td>
+
+                            <td style="width: 140px;" class="text-center"><input #num class="form-control" type="number" min="0" /></td>
+                            <td style="width: 222px;" class="text-center">{{product.price * num }}</td>
                             <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"
                                         (click)="removeFromCart()"></i></button></td>
                         </tr>

@@ -33,7 +33,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.cartService.getCartProducts().map(data => {
+      this.cartProductCount = data.quantity;
+    })
   }
 
 }

@@ -9,6 +9,7 @@ export class ShoppingcartService {
   constructor() { }
 
   private cartProducts: tourStructure[] = []
+  public cartItems = [];
 
   //Lista produktów do koszyka
   getCartProducts(): tourStructure[] {
@@ -30,16 +31,21 @@ export class ShoppingcartService {
     }
   }
   //Usuń produkt z koszyka
-  removeProductFromCart(product: tourStructure) {
-    let index = this.cartProducts.indexOf(product)
-    if (index > -1) {
-      this.cartProducts.splice(index, 1)
-    }
+  // removeProductFromCart(product: tourStructure) {
+  //   let index = this.cartProducts.indexOf(product)
+  //   if (index > -1) {
+  //     this.cartProducts.splice(index, 1)
+  //   }
+  // }
+
+  removeProductFromCart(productId) {
+    this.cartItems.map((item, index) => {
+      if (item.id === productId) {
+        this.cartItems.splice(index, 1);
+      }
+    });
   }
-  //Opróżnij koszyk
-  emptyCart() {
-    this.cartProducts.length = 0;
-  }
+
   //Całkowita cena 
   getTotalPrice() {
     let total = 0
