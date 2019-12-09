@@ -40,12 +40,16 @@
               <td style="width: 300px;"><img src="assets/malediwy.jpg" height="100" width="150" /></td>
               <td style="width: 242px;">{{product.name}}</td>
 
-              <td style="width: 442px;" class="text-center">Tak</td>
+              <td style="width: 442px;" class="text-center" *ngIf="product.leftSeats > 0 else noMorePlaces">Tak</td>
 
-              <td style="width: 140px;" class="text-center"><input #num class="form-control"
+              <td style="width: 140px;" class="text-center"><input class="form-control" 
                   [(ngModel)]="product.quantity" type="number" min="0" />
               </td>
-              <td style="width: 222px;" class="text-center">{{product.price * product.quantity}}</td>
+              <ng-template #noMorePlaces >
+                <td style="width: 442px;" class="text-center">Nie</td>
+              </ng-template>
+              
+              <td style="width: 222px;" class="text-center">{{product.price * product.quantity}} {{product.currency | currency}}</td>
               <td class="text-right">
                 <button class="btn btn-sm btn-danger" (click)="removeFromCart(product)">
                   <i class="fa fa-trash"></i>
@@ -61,7 +65,7 @@
 <div class="container mb-4">
   <div class="row">
     <div class="col-12">
-      <div class="table-responsive sm-8">
+      <div class="table-responsive sm-8" *ngIf="products.length > 0">
         <table class="table table-striped">
           <tbody>
             <tr>
@@ -70,7 +74,7 @@
               <td></td>
               <td></td>
               <td>Cena całkowita</td>
-              <td class="text-right">{{totalPrice()}}</td>
+              <td class="text-right">{{totalPrice()}} zł</td>
             </tr>
             <tr>
               <td></td>
