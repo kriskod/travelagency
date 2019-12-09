@@ -11,25 +11,25 @@ import { ShoppingcartService } from '../services/shoppingcart.service';
 })
 export class TourdetailComponent implements OnInit {
 
-  @Input() tour: tourStructure
+  private tour: tourStructure
 
-  constructor(private route: ActivatedRoute, private tourService: TourService, private ShoppingCartService: ShoppingcartService)  { }
+  constructor(private route: ActivatedRoute, private tourService: TourService, private ShoppingCartService: ShoppingcartService) { }
 
-  getCartProduct(id: number){
+  getCartProduct(id: number) {
     this.tourService.getProduct(id)
   }
 
-  onTourBooked(){
-    if(this.tour.leftSeats > 0)
+  onTourBooked() {
+    if (this.tour.leftSeats > 0)
       this.tour.leftSeats -= 1
   }
 
-  onTourCancelled(){
-    if(this.tour.leftSeats < this.tour.maxSeats)
-    this.tour.leftSeats += 1
+  onTourCancelled() {
+    if (this.tour.leftSeats < this.tour.maxSeats)
+      this.tour.leftSeats += 1
   }
 
-  onCartAdded(){
+  onCartAdded() {
     console.log("Dodano do koszyka")
     this.ShoppingCartService.addCartProduct(this.tour)
   }
@@ -39,7 +39,15 @@ export class TourdetailComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.route.params.subscribe(
+      params => {
+        console.log(params)
+        if (params["id"])
+          this.tour = this.tourService.getProduct(+params["id"]);
+        console.log(this.tour)
+      },
+      err => console.log(err)
+    )
   }
 
 }

@@ -1,94 +1,99 @@
 <section class="jumbotron text-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">Twój koszyk</h1>
-    </div>
+  <div class="container">
+    <h1 class="jumbotron-heading">Twój koszyk</h1>
+  </div>
 </section>
 
 <div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-striped sm-8">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th scope="col"></th>
-                            <th scope="col">Wycieczka</th>
-                            <th scope="col">Dostępność</th>
-                            <th scope="col">Osoby</th>
-                            <th scope="col">Cena</th>
-                            <th> </th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-striped sm-8">
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th scope="col"></th>
+              <th scope="col">Wycieczka</th>
+              <th scope="col">Dostępność</th>
+              <th scope="col">Osoby</th>
+              <th scope="col">Cena</th>
+              <th> </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
     </div>
+  </div>
 </div>
 <div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive sm-8" *ngFor="let product of products">
-                <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <td style="width: 300px;"><img src="assets/malediwy.jpg" height="100" width="150" /></td>
-                            <td style="width: 242px;">{{product.name}}</td>
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive sm-8" *ngFor="let product of products">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <td style="width: 300px;"><img src="assets/malediwy.jpg" height="100" width="150" /></td>
+              <td style="width: 242px;">{{product.name}}</td>
 
-                            <td style="width: 442px;" class="text-center">Tak</td>
+              <td style="width: 442px;" class="text-center">Tak</td>
 
-                            <td style="width: 140px;" class="text-center"><input #num class="form-control" type="number" min="0" /></td>
-                            <td style="width: 222px;" class="text-center">{{product.price}}</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"
-                                        (click)="removeFromCart()"></i></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+              <td style="width: 140px;" class="text-center"><input #num class="form-control"
+                  [(ngModel)]="product.quantity" type="number" min="0" />
+              </td>
+              <td style="width: 222px;" class="text-center">{{product.price * product.quantity}}</td>
+              <td class="text-right">
+                <button class="btn btn-sm btn-danger" (click)="removeFromCart(product)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>
 <div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive sm-8" >
-                <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Cena całkowita</td>
-                            <td class="text-right" *ngFor="let product of products">Tu sie powinnna sumować cena</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>Kod promocyjny</strong></td>
-                            <td class="text-right"><strong>ANGULAR20</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive sm-8">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Cena całkowita</td>
+              <td class="text-right">{{totalPrice()}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><strong>Kod promocyjny</strong></td>
+              <td class="text-right"><strong>ANGULAR20</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-            <div class="col mb-2">
-                <div class="row">
-                    <div class="col-sm-12  col-md-6">
-                        <button class="btn btn-block btn-light" routerLink="">Kontynuuj zakupy</button>
-                    </div>
-                    <div class="col-sm-12 col-md-6 text-right">
-                        <button class="btn btn-lg btn-block btn-success text-uppercase" routerLink="">Do kasy</button>
-                    </div>
-                </div>
-            </div>
+      <div class="col mb-2">
+        <div class="row">
+          <div class="col-sm-12  col-md-6">
+            <button class="btn btn-block btn-light" routerLink="">Kontynuuj zakupy</button>
+          </div>
+          <div class="col-sm-12 col-md-6 text-right">
+            <button class="btn btn-lg btn-block btn-success text-uppercase" routerLink="">Do kasy</button>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

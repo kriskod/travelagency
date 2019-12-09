@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   cartProductCount: number = 0;
 
-  constructor(private tourService: TourService, private dialog: MatDialog, private cartService: ShoppingcartService) {}
+  constructor(private tourService: TourService, private dialog: MatDialog, private cartService: ShoppingcartService) { }
 
   onTourAdded(product: tourStructure) {
     this.tourService.addProduct(product)
@@ -31,10 +31,13 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(this.cartService.getCartProducts().length > 0){
-      this.cartProductCount += 1
-    }
-    
+    this.cartService.cartLength$.subscribe(
+      length => {
+        console.log(length)
+        this.cartProductCount = length;
+      }
+    )
+
   }
 
 }
