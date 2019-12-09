@@ -12,11 +12,9 @@ import { ShoppingcartService } from '../services/shoppingcart.service';
 })
 export class HeaderComponent implements OnInit {
 
-   cartProductCount: number = 0;
+  cartProductCount: number = 0;
 
-  constructor(private tourService: TourService, private dialog: MatDialog, private cartService: ShoppingcartService) {
-
-  }
+  constructor(private tourService: TourService, private dialog: MatDialog, private cartService: ShoppingcartService) {}
 
   onTourAdded(product: tourStructure) {
     this.tourService.addProduct(product)
@@ -39,7 +37,4 @@ export class HeaderComponent implements OnInit {
     
   }
 
-  countCartProducts(){
-    
-  }
 }
