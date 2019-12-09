@@ -17,6 +17,8 @@ import { FooterComponent } from './footer/footer.component';
 import { TourdetailComponent } from './tourdetail/tourdetail.component';
 import { HomeComponent } from './home/home.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
+import { ReservationComponent } from './reservation/reservation.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { CurrencyPipe } from './pipes/currency.pipe';
     FooterComponent,
     TourdetailComponent,
     HomeComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    ReservationComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

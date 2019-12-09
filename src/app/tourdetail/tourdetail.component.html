@@ -1,56 +1,58 @@
 <div class="container">
-  <div class="card">
-    <div class="container-fluid">
-      <div class="wrapper row">
-        <div class="preview col-md-6">
+    <div class="card">
+        <div class="container-fluid">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
 
-          <div class="preview-pic tab-content">
-            <div class="tab-pane active" id="pic-1"><img src="assets/malediwy.jpg" /></div>
-            <div class="tab-pane" id="pic-2"><img src="assets/2.jpg" /></div>
-            <div class="tab-pane" id="pic-3"><img src="assets/3.jpg" /></div>
-            <div class="tab-pane" id="pic-4"><img src="assets/4.jpg" /></div>
-            <div class="tab-pane" id="pic-5"><img src="assets/5.jpg" /></div>
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1"><img src="assets/malediwy.jpg" /></div>
+                        <div class="tab-pane rounded-3" id="pic-2"><img src="assets/2.jpg" /></div>
+                        <div class="tab-pane" id="pic-3"><img src="assets/3.jpg" /></div>
+                        <div class="tab-pane" id="pic-4"><img src="assets/4.jpg" /></div>
+                        <div class="tab-pane" id="pic-5"><img src="assets/5.jpg" /></div>
 
-          </div>
-          <ul class="preview-thumbnail nav nav-tabs">
-            <li>
-              <a data-target="#pic-1" data-toggle="tab"><img src="assets/malediwy.jpg" /></a>
-            </li>
-            <li>
-              <a data-target="#pic-2" data-toggle="tab"><img src="assets/2.jpg" /></a>
-            </li>
-            <li>
-              <a data-target="#pic-3" data-toggle="tab"><img src="assets/3.jpg" /></a>
-            </li>
-            <li>
-              <a data-target="#pic-4" data-toggle="tab"><img src="assets/4.jpg" /></a>
-            </li>
-            <li>
-              <a data-target="#pic-5" data-toggle="tab"><img src="assets/5.jpg" /></a>
-            </li>
-          </ul>
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs">
+                        <li>
+                            <a data-target="#pic-1" data-toggle="tab"><img src="assets/malediwy.jpg" /></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-2" data-toggle="tab"><img src="assets/2.jpg" /></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-3" data-toggle="tab"><img src="assets/3.jpg" /></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-4" data-toggle="tab"><img src="assets/4.jpg" /></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-5" data-toggle="tab"><img src="assets/5.jpg" /></a>
+                        </li>
+                    </ul>
 
-          <div class="action mt-4">
-            <button class="add-to-cart btn btn-default" type="button" (click)="onCartAdded(product)">Dodaj do
+                    <div class="action mt-4 align-self-center">
+                        <button class="add-to-cart btn btn-default" type="button" (click)="onCartAdded(product)">Dodaj do
               koszyka</button>
-            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
-          </div>
+                        <button class="like btn btn-default ml-2" type="button"><span class="fa fa-heart"></span></button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="details col-md">
+                        <h2 class="product-title text-center">{{tour.name}}</h2>
+                        <span class="text-center" style="font-weight: bold;">14 recenzji</span>
+                    </div>
+                    <p class="product-description mt-2" style="font-size: 18px;">{{tour.description}}</p>
+                    <hr>
+                    <h4 class="price">Obecna cena: <span>{{tour.price}} </span></h4>
+                    <p class="vote" style="font-size: 17px;"><strong>91%</strong> kupującym podobała się ta wycieczka! <strong>(17 głosów)</strong></p>
+                    <hr>
+                    <h4 class="sizes">Miejsca:
+                        <span class="size" data-toggle="tooltip" title="small">{{tour.leftSeats}}</span>
+                    </h4>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-          <div class="details col-md">
-            <h2 class="product-title text-center">{{tour.name}}</h2>
-            <span class="text-center" style="font-weight: bold;">14 recenzji</span>
-          </div>
-          <p class="product-description mt-2">{{tour.description}}</p>
-          <h4 class="price">Obecna cena: <span>{{tour.price}} </span></h4>
-          <p class="vote"><strong>91%</strong> kupującym podobała się ta wycieczka! <strong>(17 głosów)</strong></p>
-          <h5 class="sizes">Miejsca:
-            <span class="size" data-toggle="tooltip" title="small">{{tour.leftSeats}}</span>
-          </h5>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
 
 <br><br>

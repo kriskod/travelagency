@@ -5,6 +5,7 @@ body {
 
 img {
     max-width: 100%;
+    border-radius: 5px;
 }
 
 .preview {
@@ -69,8 +70,6 @@ img {
     line-height: 1.5em;
 }
 
-
-
 .details {
     display: -webkit-box;
     display: -webkit-flex;
@@ -82,8 +81,6 @@ img {
     -ms-flex-direction: column;
     flex-direction: column;
 }
-
-
 
 .product-title,
 .price,
@@ -153,5 +150,3 @@ img {
 .orange {
     background: #ff9f1a;
 }
-
-

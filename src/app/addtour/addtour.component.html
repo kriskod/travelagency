@@ -1,56 +1,51 @@
-<h4>Nowa wycieczka</h4>
+<h4 class="text-center">
+    Nowa wycieczka</h4>
 <br>
-<form [formGroup]="addTourForm">
+<form [formGroup]="addTourForm" style="width: auto;">
     <div class="row">
-        <div class="col-sm">
+        <div class="col-md-6">
+            <label>Nazwa wycieczki: </label>
+            <input #name type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="col-md-6">
+            <label>Kraj: </label>
+            <input #destination type="text" class="form-control" formControlName="destinationCountry">
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <label>Data wylotu: </label>
+            <input #startDate type="date" class="form-control" formControlName="startDate">
+        </div>
+        <div class="col-md-6">
+            <label>Data powrotu: </label>
+            <input #finishDate type="date" class="form-control" formControlName="finishDate">
+
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <label>Cena wycieczki: </label>
+            <input #price type="number" class="form-control" formControlName="price">
+        </div>
+        <div class="col-md-6">
+            <label>Ilość miejsc: </label>
+            <input #maxSeats type="number" class="form-control" formControlName="maxSeats">
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-12">
             <div class="form-group">
-                <label>Nazwa wycieczki: </label>
-                <input #name type="text" class="form-control" formControlName="name">
+                <label>Opis: </label>
+                <textarea #description type="text" class="form-control" rows="4" formControlName="description"></textarea>
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label>Kraj: </label>
-        <input #destination type="text" class="form-control" formControlName="destinationCountry">
-    </div>
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label>Data wylotu: </label>xz
-                <input #startDate type="date" class="form-control" formControlName="startDate">
-            </div>
-            <div class="form-group">
-                <label>Data powrotu: </label>
-                <input #finishDate type="date" class="form-control" formControlName="finishDate">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label>Cena wycieczki: </label>
-                <input #price type="number" class="form-control" formControlName="price">
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Ilość miejsc: </label>
-        <input #maxSeats type="number" class="form-control" formControlName="maxSeats">
-        <div class="row">
-            <div class="col-sm">
-                <div class="form-group">
-                    <label>Opis: </label>
-                    <textarea #description type="text" class="form-control" rows="4" formControlName="description"></textarea>
-                </div>
-                <!-- <div class="form-group">
-          <label>Obraz: </label>
-          <input #img type="file" class="form-control">
-        </div> -->
-            </div>
-        </div>
-        <div class="d-flex flex-row justify-content-sm-between">
-            <button type="submit" class="btn btn-success" [disabled]="!addTourForm.valid" (click)="submitNewTour()">Potwierdź</button>
-            <button type="close" class="btn btn-primary" (click)="closeDialog()">Zamknij</button>
-        </div>
+    <div class="d-flex flex-row justify-content-sm-between">
+        <button type="submit" class="btn btn-success" [disabled]="!addTourForm.valid" (click)="submitNewTour()">Potwierdź</button>
+        <button type="close" class="btn btn-primary" (click)="closeDialog()">Zamknij</button>
     </div>
 </form>
