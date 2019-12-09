@@ -3,13 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { TourlistComponent } from './tourlist/tourlist.component';
 import { TourdetailComponent } from './tourdetail/tourdetail.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
   { path: '', component: TourlistComponent },
-  { path: 'ShoppingCart', component: ShoppingcartComponent },
-  { path: 'Tourlist', component: TourlistComponent },
-  { path: 'tourDetails/:id', component: TourdetailComponent }
+  { path: 'Koszyk', component: ShoppingcartComponent },
+  { path: 'Lista-wycieczek', component: TourlistComponent },
+  { path: 'Szczegóły-wycieczki/:id', component: TourdetailComponent }
+  //{ path: 'Rejestracja/:id', component: RegisterComponent }
+  //{ path: 'Logowanie/:id', component: LoggingComponent }
 ];
 
 @NgModule({

@@ -12,7 +12,7 @@
                         <div class="tab-pane" id="pic-5"><img src="assets/5.jpg" /></div>
                     </div>
                     <ul class="preview-thumbnail nav nav-tabs">
-                        <li class="active">
+                        <li >
                             <a data-target="#pic-1" data-toggle="tab"><img src="assets/malediwy.jpg" /></a>
                         </li>
                         <li>
@@ -29,19 +29,18 @@
                         </li>
                     </ul>
 
-                    <div class="details col-md-6">
-                        <h3 class="product-title">{{item.name || uppercase}}</h3>
-                        <star-rating [value]="item.rate" totalstars="5" checkedcolor="gold" uncheckedcolor="gray" size="28px" readonly="false" (rate)="onRate($event)">
-                        </star-rating>
+                    <div class="details col-md-6" >
+                        <h3 class="product-title">Nazwa wycieczki</h3>
                         <span class="review-no">14 recenzji</span>
                     </div>
-                    <p class="product-description">{{item.description}}</p>
-                    <h4 class="price">current price: <span>{{item.price}}</span></h4>
+                    <p class="product-description">Opis wycieczki</p>
+                    <h4 class="price">current price: <span>Cena</span></h4>
                     <p class="vote"><strong>91%</strong> kupującym podobała się ta wycieczka! <strong>(17
                             głosów)</strong></p>
                     <h5 class="sizes">Miejsca:
-                        <span class="size" data-toggle="tooltip" title="small">{{item.maxSeats}}</span>
+                        <span class="size" data-toggle="tooltip" title="small">Ilość miejsc</span>
                     </h5>
+
                     <div class="action">
                         <button class="add-to-cart btn btn-default" type="button">Dodaj do koszyka</button>
                         <button class="like btn btn-default" type="button" (click)="onCartAdded(product)"><span

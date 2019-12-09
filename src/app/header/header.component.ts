@@ -12,7 +12,7 @@ import { ShoppingcartService } from '../services/shoppingcart.service';
 })
 export class HeaderComponent implements OnInit {
 
-  private cartProductCount: number = 0;
+   cartProductCount: number = 0;
 
   constructor(private tourService: TourService, private dialog: MatDialog, private cartService: ShoppingcartService) {
 
@@ -33,9 +33,13 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cartService.getCartProducts().map(data => {
-      this.cartProductCount = data.quantity;
-    })
+    if(this.cartService.getCartProducts().length > 0){
+      this.cartProductCount += 1
+    }
+    
   }
 
+  countCartProducts(){
+    
+  }
 }

@@ -35,7 +35,7 @@ export class TourComponent implements OnInit {
     this.tour.rate = $event.newRate;
   }
 
-  onCartAdded(tour){
+  onCartAdded(){
     console.log("Dodano do koszyka")
     this.ShoppingCartService.addCartProduct(this.tour)
   }

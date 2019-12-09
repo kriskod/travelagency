@@ -12,3 +12,10 @@ export interface tourStructure {
     rate?: number;
     quantity?: number
 }
+
+export enum currency {
+    PLN,
+    EUR,
+    USD,
+    GBP
+}

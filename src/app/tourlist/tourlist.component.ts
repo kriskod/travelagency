@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tourStructure } from '../models/tourStructure.model';
-import { tourData } from '../tour/tourData.model';
 import { TourService } from '../services/tour.service';
+import { CurrencyService } from '../services/currency.service';
 
 @Component({
   selector: 'app-tourlist',
@@ -12,7 +12,7 @@ export class TourlistComponent implements OnInit {
 
   tours: tourStructure[] = [];
 
-  constructor(private tourService: TourService) { }
+  constructor(private tourService: TourService, private curencyService : CurrencyService) { }
 
   getTours() {
     this.tours = this.tourService.getProducts()
@@ -25,4 +25,5 @@ export class TourlistComponent implements OnInit {
   removeProduct(product: tourStructure) {
     this.tourService.deleteProduct(product)
   }
+
 }

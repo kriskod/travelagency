@@ -13,30 +13,21 @@ export class ShoppingcartComponent implements OnInit {
   
   constructor( private ShoppingCartService: ShoppingcartService) {}
 
-  private totalAmmount = 0;
-
   //Wyświetlanie produktów w koszyku
   ngOnInit() {
     this.products = this.ShoppingCartService.getCartProducts()
     console.log(this.products)
   }
 
-  //Dodawanie do koszyka
-  addToCart(product: tourStructure){
-    window.alert('Dodano do koszyka')
-    this.ShoppingCartService.addCartProduct(product)
-  }
-
   // //Usuwanie produktu z  koszyka
-  removeFromCart(productId){
-    window.alert('Wyczyszczono koszyk')
-    this.ShoppingCartService.removeProductFromCart(productId)
+  removeFromCart(product: tourStructure){
+    window.alert('Usunięto z koszyka')
+    this.ShoppingCartService.removeProductFromCart(product)
   }
 
   //Całkowita cena zamówienia 
   totalPrice(){
-    this.totalAmmount = this.ShoppingCartService.getTotalPrice()
-    return this.totalAmmount
+
   }
 
 }

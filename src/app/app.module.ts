@@ -15,6 +15,7 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { TourdetailComponent } from './tourdetail/tourdetail.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { TourdetailComponent } from './tourdetail/tourdetail.component';
     AddtourComponent,
     ShoppingcartComponent,
     FooterComponent,
-    TourdetailComponent
+    TourdetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
