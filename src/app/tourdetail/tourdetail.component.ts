@@ -3,6 +3,7 @@ import { tourStructure } from '../models/tourStructure.model';
 import { TourService } from '../services/tour.service';
 import { ActivatedRoute } from '@angular/router';
 import { ShoppingcartService } from '../services/shoppingcart.service';
+import { CurrencyPipe } from '../pipes/currency.pipe';
 
 @Component({
   selector: 'app-tourdetail',

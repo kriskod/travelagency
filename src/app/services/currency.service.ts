@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { currency } from '../models/tourStructure.model';
+import { Currency } from '../models/tourStructure.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +10,14 @@ export class CurrencyService {
 
   currencyChange = new Map(
     [
-      [currency.PLN, 1],
-      [currency.EUR, 4.27],
-      [currency.USD, 3.85],
-      [currency.GBP, 5.08]
+      [Currency.PLN, 1],
+      [Currency.EUR, 4.27],
+      [Currency.USD, 3.85],
+      [Currency.GBP, 5.08]
     ]
   )
 
-  conversion(price: number, currency: currency) {
+  conversion(price: number, currency: Currency) {
     return price * this.currencyChange.get(currency)
   }
 

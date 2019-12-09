@@ -13,7 +13,7 @@ export interface tourStructure {
     quantity?: number
 }
 
-export enum currency {
+export enum Currency {
     PLN,
     EUR,
     USD,

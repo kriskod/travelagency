@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { TourdetailComponent } from './tourdetail/tourdetail.component';
 import { HomeComponent } from './home/home.component';
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HomeComponent } from './home/home.component';
     ShoppingcartComponent,
     FooterComponent,
     TourdetailComponent,
-    HomeComponent
+    HomeComponent,
+    CurrencyPipe
   ],
   imports: [
     BrowserModule,
