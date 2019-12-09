@@ -10,7 +10,7 @@ export const tourData: tourStructure[] = [
         price: 4000,
         maxSeats: 5,
         leftSeats: 2,
-        description: 'Opis tej wycieczki',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 2.1
     },
@@ -24,7 +24,7 @@ export const tourData: tourStructure[] = [
         price: 2000,
         maxSeats: 8,
         leftSeats: 8,
-        description: 'Opis wycieczki',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 3.8
     },
@@ -38,7 +38,7 @@ export const tourData: tourStructure[] = [
         price: 8000,
         maxSeats: 6,
         leftSeats: 5,
-        description: 'Opis wycieczki',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 0
     },
@@ -52,7 +52,7 @@ export const tourData: tourStructure[] = [
         price: 3500,
         maxSeats: 4,
         leftSeats: 3,
-        description: 'Opis wycieczki',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 4.5
     },
@@ -66,7 +66,7 @@ export const tourData: tourStructure[] = [
         price: 4200,
         maxSeats: 12,
         leftSeats: 10,
-        description: 'Opis wycieczki',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 5
     },
@@ -80,7 +80,7 @@ export const tourData: tourStructure[] = [
         price: 6300,
         maxSeats: 3,
         leftSeats: 2,
-        description: 'Opis wycieczki',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 0
     },
@@ -94,7 +94,7 @@ export const tourData: tourStructure[] = [
         price: 1500,
         maxSeats: 10,
         leftSeats: 10,
-        description: 'Opis wycieczki',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 0
     },
@@ -108,7 +108,7 @@ export const tourData: tourStructure[] = [
         price: 3700,
         maxSeats: 6,
         leftSeats: 6,
-        description: 'Opis wycieczki',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 0
     }
