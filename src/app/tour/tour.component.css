@@ -30,3 +30,41 @@
 .img-responsive {
     max-width: 450px;
 }
+
+@media screen and (max-width: 768px) {
+    .information {
+        text-align: center;
+    }
+    img {
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+    #rate {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        width: 100%;
+    }
+    #rate {
+        align-content: center;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    star-rating {
+        size: 24px;
+    }
+    .stars {
+        size: 22px;
+    }
+    img {
+        margin-top: 30px;
+        margin-left: 5px;
+    }
+}

@@ -1,0 +1,35 @@
+<form [formGroup]="filterGroup">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <label>Kraj</label>
+                <input type="text" class="form-control" formControlName="destination">
+            </div>
+            <div class="col-sm">
+                <label>Data rozpoczęcia</label>
+                <input type="date" class="form-control" formControlName="minDate">
+            </div>
+            <div class="col-sm">
+                <label>Data zakończenia</label>
+                <input type="date" class="form-control" formControlName="maxDate">
+            </div>
+            <div class="col-sm">
+                <label>Cena minimalna</label>
+                <input type="number" class="form-control" formControlName="minPrice" min="0">
+            </div>
+            <div class="col-sm">
+                <label>Cena maksymalna</label>
+                <input type="number" class="form-control" formControlName="maxPrice" min="0">
+            </div>
+            <div class="cos-sm">
+                <div class="row mb-3">
+                    <button type="submit" class="btn btn-success" (click)="submitFilter()">Szukaj</button>
+                </div>
+                <div class="row">
+                    <button type="close" class="btn btn-primary" (click)="closeFilterDialog()">Zamknij</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

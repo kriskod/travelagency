@@ -19,6 +19,11 @@ import { HomeComponent } from './home/home.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
 import { ReservationComponent } from './reservation/reservation.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FilterComponent } from './filter/filter.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -34,7 +39,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     HomeComponent,
     CurrencyPipe,
     ReservationComponent,
-    FilterPipe
+    FilterPipe,
+    FilterComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,10 +52,14 @@ import { FilterPipe } from './pipes/filter.pipe';
     FormsModule,
     MatDialogModule,
     MatSidenavModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService
+    )
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [AddtourComponent]
+  entryComponents: [AddtourComponent, FilterComponent]
 })
 export class AppModule { }

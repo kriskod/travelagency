@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-4 mt-4" id="info">
                 <div class="information">
-                    <h3 class="clickable" style="cursor: pointer;" [routerLink]="['/Szczegóły-wycieczki', tour.id]">{{tour?.name || uppercase}}</h3>
+                    <h3 class="clickable" style="cursor: pointer;" [routerLink]="['Szczegóły-wycieczki', tour.id]">{{tour?.name || uppercase}}</h3>
                     <div>Kraj: {{tour?.destinationCountry}}</div>
                     <div>{{tour?.startDate | date:'yyyy/MM/dd'}} - {{tour?.finishDate | date:'yyyy/MM/dd'}}</div>
                     <div>Cena za osobę: {{tour.price}}</div>
@@ -19,7 +19,7 @@
             </div>
             <div class="col-md mt mt-4" id="rate">
                 <h4>Ocena: {{tour?.rate}}</h4>
-                <star-rating [value]="tour.rate" totalstars="5" checkedcolor="gold" uncheckedcolor="gray" size="28px" readonly="false" (rate)="onRate($event)">
+                <star-rating class="stars" [value]="tour.rate" totalstars="5" checkedcolor="gold" uncheckedcolor="gray" size="28px" readonly="false" (rate)="onRate($event)">
                 </star-rating>
                 <div class="column mt-2">
                     <button [ngStyle]="{'visibility': (tour.leftSeats > 0 ? 'visible' : 'hidden')}" class="btn btn-primary onHover" (click)="onTourBooked()" style="width: 50px;">+</button>

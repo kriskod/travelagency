@@ -5,15 +5,23 @@ import { TourlistComponent } from './tourlist/tourlist.component';
 import { TourdetailComponent } from './tourdetail/tourdetail.component';
 import { HomeComponent } from './home/home.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { AddtourComponent } from './addtour/addtour.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  { path: '', component: TourlistComponent },
-  { path: 'Koszyk', component: ShoppingcartComponent },
-  { path: 'Lista-wycieczek', component: TourlistComponent },
-  { path: 'Szczegóły-wycieczki/:id', component: TourdetailComponent },
-  { path: 'Rezerwacja', component: ReservationComponent },
-  { path: 'Strona-glowna', component: HomeComponent }
+  { path: '', redirectTo: "/app", pathMatch: 'full' },
+  {
+    path: 'app', component: HomeComponent, children: [
+      { path: '', redirectTo: "/dashboard", pathMatch: 'full' },
+      { path: 'Dodaj-wycieczke', component: AddtourComponent },
+      { path: 'Koszyk', component: ShoppingcartComponent },
+      { path: 'lista-wycieczek', component: TourlistComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'Szczegóły-wycieczki/:id', component: TourdetailComponent },
+      { path: 'Rezerwacja', component: ReservationComponent },
+    ]
+  },
 ];
 
 @NgModule({

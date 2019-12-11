@@ -41,13 +41,13 @@ export class TourdetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(
-      params => {
-        console.log(params)
-        if (params["id"])
-          this.tour = this.tourService.getProduct(+params["id"]);
-        console.log(this.tour)
+      params => this.tourService.getProduct(+params["id"]).subscribe (
+        tour => {
+          this.tour = tour
+          console.log(tour)
       },
       err => console.log(err)
+      )
     )
   }
 

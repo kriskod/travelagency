@@ -12,10 +12,16 @@ export class TourlistComponent implements OnInit {
 
   tours: tourStructure[] = [];
 
-  constructor(private tourService: TourService, private curencyService : CurrencyService) { }
+  constructor(private tourService: TourService, private curencyService: CurrencyService) { }
 
   getTours() {
-    this.tours = this.tourService.getProducts()
+    //this.tours = this.tourService.getProducts()
+    this.tourService.getProducts().subscribe(
+      products => {
+        this.tours = products
+      },
+      err => console.log(err)
+    )
   }
 
   ngOnInit() {
@@ -23,7 +29,13 @@ export class TourlistComponent implements OnInit {
   }
 
   removeProduct(product: tourStructure) {
-    this.tourService.deleteProduct(product)
+    //this.tourService.deleteProduct(product)
+    this.tourService.deleteProduct(product).subscribe(
+      response => {
+        this.getTours()
+      },
+      err => console.log(err)
+    )
   }
 
 }

@@ -4,6 +4,7 @@ import { tourStructure } from '../models/tourStructure.model';
 import { MatDialog } from '@angular/material';
 import { AddtourComponent } from '../addtour/addtour.component';
 import { ShoppingcartService } from '../services/shoppingcart.service';
+import { FilterComponent } from '../filter/filter.component';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,8 @@ import { ShoppingcartService } from '../services/shoppingcart.service';
 })
 export class HeaderComponent implements OnInit {
 
-  cartProductCount: number = 0;
+  cartProductCount: number = 0
+  searchTour: any = {}
 
   constructor(private tourService: TourService, private dialog: MatDialog, private cartService: ShoppingcartService) { }
 
@@ -30,6 +32,15 @@ export class HeaderComponent implements OnInit {
       });
   }
 
+  onFilterClicked() {
+    let searchRef = this.dialog.open(FilterComponent, {});
+
+    searchRef.afterClosed().subscribe(
+      (filterResult) => {
+        console.log(filterResult);
+      });
+  }
+
   ngOnInit() {
     this.cartService.cartLength$.subscribe(
       length => {
@@ -37,7 +48,9 @@ export class HeaderComponent implements OnInit {
         this.cartProductCount = length;
       }
     )
-
   }
 
+  onSearchResult(results: any) {
+    this.searchTour = results;
+  }
 }

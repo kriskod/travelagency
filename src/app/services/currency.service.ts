@@ -17,7 +17,7 @@ export class CurrencyService {
     ]
   )
 
-  conversion(price: number, currency: Currency) {
+  changeMoney(price: number, currency: Currency) {
     return price * this.currencyChange.get(currency)
   }
 

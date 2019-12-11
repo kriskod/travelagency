@@ -1,3 +1,5 @@
 <div class="containter-fluid">
-    <app-tour [tour]="tour" *ngFor="let tour of tours" (removeTour)="removeProduct(tour)"></app-tour>
+    <div class="col-xl">
+        <app-tour [tour]="tour" *ngFor="let tour of tours" (removeTour)="removeProduct(tour)"></app-tour>
+    </div>
 </div>
