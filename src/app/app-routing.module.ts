@@ -18,7 +18,6 @@ const routes: Routes = [
   { path: 'rejestracja', component: RegistrationComponent },
   { path: 'logowanie', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'strona-glowna', component: MainPageComponent},
   {
     path: 'app', component: HomeComponent, children: [
       { path: '', redirectTo: "lista-wycieczek", pathMatch: 'full' },
@@ -28,6 +27,7 @@ const routes: Routes = [
       { path: 'szczegoly-wycieczki/:id', component: TourdetailComponent },
       { path: 'rezerwacja', component: ReservationComponent },
       { path: 'regulamin', component: RegulationsComponent },
+      { path: 'strona-glowna', component: MainPageComponent},
     ]
   },
 ];
