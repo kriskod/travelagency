@@ -38,7 +38,7 @@
                     <tbody>
                         <tr>
                             <td style="width: 300px;"><img src="assets/malediwy.jpg" height="100" width="150" /></td>
-                            <td style="width: 242px; cursor: pointer;" class="clickable" [routerLink]="['/Szczegóły-wycieczki/', product.id]" routerLinkActive="router-link-active">{{product.name}}</td>
+                            <td style="width: 242px; cursor: pointer;" class="clickable" [routerLink]="['/szczegóły-wycieczki/', product.id]" routerLinkActive="router-link-active">{{product.name}}</td>
 
                             <td style="width: 442px;" class="text-center" *ngIf="product.leftSeats > 0 else noMorePlaces">Tak</td>
 
@@ -93,7 +93,7 @@
                         <button class="btn btn-block btn-light" routerLink="/app/lista-wycieczek">Kontynuuj zakupy</button>
                     </div>
                     <div class="col-sm-12 col-md-6 text-right">
-                        <button class="btn btn-lg btn-block btn-success text-uppercase" routerLink="/app/Rezerwacja">Rezerwuj!</button>
+                        <button class="btn btn-lg btn-block btn-success text-uppercase" routerLink="/app/rezerwacja">Rezerwuj!</button>
                     </div>
                 </div>
             </div>

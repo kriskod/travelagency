@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row align-items-center h-100">
+        <div class="card border border-dark mx-auto col-md-6" style="height: auto; width: 500px; border-radius: 15px;">
+            <div class="card-body">
+                <h1 class="card-title mb-4">Rejestracja</h1>
+                <div class="d-flex">
+                    <form [formGroup]="registerForm" style="width: auto;">
+                        <div class="col-md-7">
+                            <div class="row">
+                                <label>Nazwa użytkownika* </label>
+                                <input #name type="text" class="form-control" formControlName="name">
+                            </div>
+                            <div class="row">
+                                <label>Email* </label>
+                                <input #email type="text" class="form-control" formControlName="name">
+                            </div>
+                            <div class="row">
+                                <label>Hasło* </label>
+                                <input #password type="text" class="form-control" formControlName="password">
+                            </div>
+                            <div class="row">
+                                <label>Potwierdź hasło* </label>
+                                <input #confirmPassword type="text" class="form-control" formControlName="confirmPassword">
+                            </div>
+                            <div class="row mt-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="larger mr-3" type="checkbox"> *Zapoznałem się i akceptuje regulamin korzystania z Podróżuj z Krzychem
+                                </div>
+                                <button class="btn btn-group mt-2" routerLink="/app/regulamin">Czytaj więcej</button>
+
+                            </div>
+
+                            <div class="row mt-2">
+                                <button class="btn btn-success" routerLink="">Zarejestruj</button>
+                            </div>
+                            <div class="row mt-3">
+                                <p>Masz już konto?</p>
+                            </div>
+                            <div class="row mt-1">
+                                <button class="btn btn-info" routerLink="/app/logowanie">Zaloguj</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

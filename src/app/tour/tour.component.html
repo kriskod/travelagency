@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-4 mt-4" id="info">
                 <div class="information">
-                    <h3 class="clickable" style="cursor: pointer;" [routerLink]="['Szczegóły-wycieczki', tour.id]">{{tour?.name || uppercase}}</h3>
+                    <h3 class="clickable" style="cursor: pointer;" [routerLink]="['/app/szczegoly-wycieczki', tour.id]">{{tour?.name || uppercase}}</h3>
                     <div>Kraj: {{tour?.destinationCountry}}</div>
                     <div>{{tour?.startDate | date:'yyyy/MM/dd'}} - {{tour?.finishDate | date:'yyyy/MM/dd'}}</div>
                     <div>Cena za osobę: {{tour.price}}</div>

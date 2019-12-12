@@ -10,7 +10,7 @@ import { TourComponent } from './tour/tour.component';
 import { AddtourComponent } from './addtour/addtour.component';
 import { RatingModule } from 'ng-starrating';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatDrawer, MatDrawerContent, MatSidenavModule } from '@angular/material';
+import { MatDialogModule, MatSidenavModule } from '@angular/material';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
@@ -24,6 +24,14 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AngularFireModule } from '@angular/fire'
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { RegulationsComponent } from './regulations/regulations.component';
+
 
 
 @NgModule({
@@ -42,6 +50,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FilterPipe,
     FilterComponent,
     DashboardComponent,
+    RegistrationComponent,
+    LoginComponent,
+    MainPageComponent,
+    RegulationsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -56,7 +69,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService
-    )
+    ),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent],

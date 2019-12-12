@@ -14,19 +14,19 @@
                 <input type="date" class="form-control" formControlName="maxDate">
             </div>
             <div class="col-sm">
-                <label>Cena minimalna</label>
+                <label>Cena od</label>
                 <input type="number" class="form-control" formControlName="minPrice" min="0">
             </div>
             <div class="col-sm">
-                <label>Cena maksymalna</label>
+                <label>Cena do</label>
                 <input type="number" class="form-control" formControlName="maxPrice" min="0">
             </div>
             <div class="cos-sm">
-                <div class="row mb-3">
+                <div class="row mb-3 ml-3">
                     <button type="submit" class="btn btn-success" (click)="submitFilter()">Szukaj</button>
                 </div>
-                <div class="row">
-                    <button type="close" class="btn btn-primary" (click)="closeFilterDialog()">Zamknij</button>
+                <div class="row ml-3">
+                    <button type="close" class="btn btn-primary" (click)="closeFilter()">Zamknij</button>
                 </div>
 
             </div>

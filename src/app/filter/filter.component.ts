@@ -13,7 +13,7 @@ export class FilterComponent implements OnInit {
 
   filterGroup: FormGroup
 
-  constructor(private tourDialogRef: MatDialogRef<FilterComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private filterDialogRef: MatDialogRef<FilterComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     this.filterGroup = new FormGroup({
@@ -23,5 +23,13 @@ export class FilterComponent implements OnInit {
       minPrice: new FormControl(''),
       maxPrice: new FormControl(''),
     });
+  }
+
+  submitFilter() {
+    this.filterDialogRef.close(this.filterGroup.value)
+  }
+
+  closeFilter() {
+    this.filterDialogRef.close()
   }
 }

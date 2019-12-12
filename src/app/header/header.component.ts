@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material';
 import { AddtourComponent } from '../addtour/addtour.component';
 import { ShoppingcartService } from '../services/shoppingcart.service';
 import { FilterComponent } from '../filter/filter.component';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,11 @@ export class HeaderComponent implements OnInit {
   cartProductCount: number = 0
   searchTour: any = {}
 
-  constructor(private tourService: TourService, private dialog: MatDialog, private cartService: ShoppingcartService) { }
+  constructor(private tourService: TourService,
+    private dialog: MatDialog,
+    private cartService: ShoppingcartService,
+    private authService: AuthService
+  ) { }
 
   onTourAdded(product: tourStructure) {
     this.tourService.addProduct(product)
@@ -52,5 +57,9 @@ export class HeaderComponent implements OnInit {
 
   onSearchResult(results: any) {
     this.searchTour = results;
+  }
+
+  showActiveUser() {
+
   }
 }

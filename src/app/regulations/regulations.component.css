@@ -1,0 +1,9 @@
+.container {
+    height: 100%;
+    width: 100%;
+    background-image: url("https://i1.adis.ws/i/canon/canon-get-inspired-composition-1-1920x1080-notint?qlt=80&w=100%&sm=aspect&aspect=16:9&fmt=jpg&fmt.options=interlaced&bg=rgb(255,255,255)");
+}
+
+.card {
+    opacity: 0.9;
+}

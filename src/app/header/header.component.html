@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
             <ul class="navbar-nav m-auto">
                 <li class="nav-item m-auto">
-                    <a class="nav-link clickable" routerLink="dashboard" routerLinkActive="active">Strona Główna</a>
+                    <a class="nav-link clickable" routerLink="strona-glowna" routerLinkActive="active">Strona Główna</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link clickable" (click)="onDialogOpened()">Dodaj wycieczke</a>
@@ -16,24 +16,19 @@
                 <li class="nav-item">
                     <a class="nav-link clickable" (click)="onFilterClicked()">Filtr</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link clickable" (click)="onLoginClicked()" routerLink="/login" routerLinkActive="active">Zaloguj</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link clickable" routerLink="lista-wycieczek" routerLinkActive="active">Oferta</a>
                 </li>
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
-                <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Szukaj...">
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-secondary btn-number">
-                          <i class="fa fa-search"></i>
-                      </button>
-                    </div>
+                <div class="row">
+                    Zalogowany użytkownik
                 </div>
-                <a class="btn btn-success btn-sm ml-3 clickable" routerLink="Koszyk" routerLinkActive="active">
+                <a class="btn btn-success btn-sm ml-3 clickable" routerLink="koszyk" routerLinkActive="active">
                     <i class="fa fa-shopping-cart"></i> Koszyk
                     <span class="badge badge-light">{{cartProductCount}}</span>
                 </a>

@@ -1,0 +1,14 @@
+img {
+    max-width: 550px;
+    border-radius: 10px;
+    border: solid;
+}
+
+p {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.card {
+    background-color: rgb(228, 228, 228);
+}

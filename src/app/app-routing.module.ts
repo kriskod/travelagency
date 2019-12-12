@@ -7,19 +7,27 @@ import { HomeComponent } from './home/home.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { AddtourComponent } from './addtour/addtour.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { RegulationsComponent } from './regulations/regulations.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: "/app", pathMatch: 'full' },
+  { path: 'rejestracja', component: RegistrationComponent },
+  { path: 'logowanie', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'strona-glowna', component: MainPageComponent},
   {
     path: 'app', component: HomeComponent, children: [
-      { path: '', redirectTo: "/dashboard", pathMatch: 'full' },
-      { path: 'Dodaj-wycieczke', component: AddtourComponent },
-      { path: 'Koszyk', component: ShoppingcartComponent },
+      { path: '', redirectTo: "lista-wycieczek", pathMatch: 'full' },
+      { path: 'dodaj-wycieczke', component: AddtourComponent },
+      { path: 'koszyk', component: ShoppingcartComponent },
       { path: 'lista-wycieczek', component: TourlistComponent },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'Szczegóły-wycieczki/:id', component: TourdetailComponent },
-      { path: 'Rezerwacja', component: ReservationComponent },
+      { path: 'szczegoly-wycieczki/:id', component: TourdetailComponent },
+      { path: 'rezerwacja', component: ReservationComponent },
+      { path: 'regulamin', component: RegulationsComponent },
     ]
   },
 ];

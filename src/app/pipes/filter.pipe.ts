@@ -28,7 +28,8 @@ export class FilterPipe implements PipeTransform {
   }
 
   filterSearchCountry(tour: tourStructure, searchTerm: any) {
-    var whereThisTour = (searchTerm['destination'] ? (searchTerm.destinationCountry.filter(country => country['destination'])) : true)
+    var whereThisTour = (searchTerm['destination'] ? (searchTerm.destinationCountry.filter(country => 
+      country['destination'])) : true)
     return whereThisTour
   }
 }
