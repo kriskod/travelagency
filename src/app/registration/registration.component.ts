@@ -23,7 +23,7 @@ export class RegistrationComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.maxLength(12)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]),
-      confirmPassword: new FormControl('',[Validators.required])
+      confirmPassword: new FormControl('', [Validators.required])
     },
       {
         validators: this.checkPasswords
@@ -41,14 +41,16 @@ export class RegistrationComponent implements OnInit {
     return this.registerForm.controls
   }
 
-  onRegistered(){
-    if(this.registerForm.valid){
-    this.authService.register({email: this.f.email.value, password: this.f.password.value}).then(
-      resolve => 
-        this.router.navigate[''])
-      }else {
-        window.alert('Hasła nie są takie same!')
-      }
+  onRegistered() {
+    if (this.registerForm.valid) {
+      this.authService.register({ email: this.f.email.value, password: this.f.password.value }).then(
+        resolve => {
+          console.log(resolve)
+          this.router.navigate['/logowanie']
+        })
+    } else {
+      window.alert('Hasła nie są takie same!')
+    }
   }
 }
 
