@@ -19,16 +19,16 @@
                 <li class="nav-item">
                     <a class="nav-link clickable" routerLink="lista-wycieczek" routerLinkActive="active">Oferta</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link clickable" routerLinkActive="active">zalogowany użytkownik</a>
-                </li>
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
-                <a class="btn btn-success btn-sm ml-3 clickable" routerLink="koszyk" routerLinkActive="active">
+                <a class="btn btn-light clickable">{{user}}</a>
+                <a class="btn btn-success btn-md ml-3 clickable" routerLink="/app/koszyk" routerLinkActive="active">
                     <i class="fa fa-shopping-cart"></i> Koszyk
                     <span class="badge badge-light">{{cartProductCount}}</span>
                 </a>
+                <a #loggedUser class="btn btn-danger btn-md ml-3" (click)="logoutUser()"><b>Wyloguj</b></a>
+                <!-- <div *ngIf="expression"></div> -->
             </form>
         </div>
     </div>

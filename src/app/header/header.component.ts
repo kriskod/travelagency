@@ -6,6 +6,7 @@ import { AddtourComponent } from '../addtour/addtour.component';
 import { ShoppingcartService } from '../services/shoppingcart.service';
 import { FilterComponent } from '../filter/filter.component';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,11 +17,13 @@ export class HeaderComponent implements OnInit {
 
   cartProductCount: number = 0
   searchTour: any = {}
+  user: String;
 
   constructor(private tourService: TourService,
     private dialog: MatDialog,
     private cartService: ShoppingcartService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   onTourAdded(product: tourStructure) {
@@ -47,6 +50,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.showActiveUser();
     this.cartService.cartLength$.subscribe(
       length => {
         console.log(length)
@@ -60,6 +64,11 @@ export class HeaderComponent implements OnInit {
   }
 
   showActiveUser() {
-
+    this.user = this.authService.user.email;
+  }
+  logoutUser(){
+    this.authService.logout().then(res =>{
+      this.router.navigateByUrl('/logowanie');
+    });
   }
 }

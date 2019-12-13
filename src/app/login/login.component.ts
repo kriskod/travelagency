@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   logIn() {
-    if(this.loginForm.valid){
+    if(this.loginForm.invalid){
       return;
     }
     let email = this.f["email"].value

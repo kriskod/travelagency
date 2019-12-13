@@ -11,6 +11,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { RegulationsComponent } from './regulations/regulations.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { AuthGuard } from './services/auth-guard';
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'logowanie', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   {
-    path: 'app', component: HomeComponent, children: [
+    path: 'app', component: HomeComponent, canActivate:[AuthGuard], children: [
       { path: '', redirectTo: "lista-wycieczek", pathMatch: 'full' },
       { path: 'dodaj-wycieczke', component: AddtourComponent },
       { path: 'koszyk', component: ShoppingcartComponent },
