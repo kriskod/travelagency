@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  isCollapsed = false;
   cartProductCount: number = 0
   searchTour: any = {}
   user: String;

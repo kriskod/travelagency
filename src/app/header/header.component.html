@@ -1,35 +1,42 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand"><img class="img-fluid bg-dark" src="assets/logo2.png"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand"><img class="img-fluid bg-dark" src="assets/logo2.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-            <ul class="navbar-nav m-auto">
-                <li class="nav-item m-auto">
-                    <a class="nav-link clickable" routerLink="strona-glowna" routerLinkActive="active">Strona Główna</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link clickable" (click)="onDialogOpened()">Dodaj wycieczke</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link clickable" (click)="onFilterClicked()">Filtr</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link clickable" routerLink="lista-wycieczek" routerLinkActive="active">Oferta</a>
-                </li>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item m-auto">
+                <a class="nav-link clickable" routerLink="strona-glowna" routerLinkActive="active">Strona Główna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link clickable" (click)="onDialogOpened()">Dodaj wycieczke</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link clickable" (click)="onFilterClicked()">Filtr</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link clickable" routerLink="lista-wycieczek" routerLinkActive="active">Oferta</a>
+            </li>
+        </ul>
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">{{user}}
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a routerLink="zamowienia">Ustawienia</a></li>
+                <li><a routerLink="historia">Historia zamówień</a></li>
+                <li><a (click)="logoutUser()">Wyloguj</a></li>
             </ul>
-
-            <form class="form-inline my-2 my-lg-0">
-                <a class="btn btn-light clickable">{{user}}</a>
-                <a class="btn btn-success btn-md ml-3 clickable" routerLink="/app/koszyk" routerLinkActive="active">
-                    <i class="fa fa-shopping-cart"></i> Koszyk
-                    <span class="badge badge-light">{{cartProductCount}}</span>
-                </a>
-                <a #loggedUser class="btn btn-danger btn-md ml-3" (click)="logoutUser()"><b>Wyloguj</b></a>
-                <!-- <div *ngIf="expression"></div> -->
-            </form>
         </div>
+        <form class="form-inline my-2 my-lg-0">
+
+            <a class="btn btn-success btn-md ml-3 clickable" routerLink="/app/koszyk" routerLinkActive="active">
+                <i class="fa fa-shopping-cart"></i> Koszyk
+                <span class="badge badge-light">{{cartProductCount}}</span>
+            </a>
+            <a #loggedUser class="btn btn-danger btn-md ml-3" (click)="logoutUser()"><b>Wyloguj</b></a>
+        </form>
     </div>
 </nav>

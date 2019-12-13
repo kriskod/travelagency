@@ -7,3 +7,8 @@
 .card {
     opacity: 0.9;
 }
+
+.larger {
+    height: 25px;
+    width: 25px;
+}

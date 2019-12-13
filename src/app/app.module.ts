@@ -31,6 +31,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { RegulationsComponent } from './regulations/regulations.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -71,7 +72,8 @@ import { RegulationsComponent } from './regulations/regulations.component';
       InMemoryDataService
     ),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],
