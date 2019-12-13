@@ -31,7 +31,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { RegulationsComponent } from './regulations/regulations.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -55,6 +57,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     MainPageComponent,
     RegulationsComponent,
+    AdminComponent,
 
   ],
   imports: [
@@ -73,7 +76,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    NgbModule
+    NgbModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent],

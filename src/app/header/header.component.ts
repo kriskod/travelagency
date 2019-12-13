@@ -67,8 +67,8 @@ export class HeaderComponent implements OnInit {
   showActiveUser() {
     this.user = this.authService.user.email;
   }
-  logoutUser(){
-    this.authService.logout().then(res =>{
+  logoutUser() {
+    this.authService.logout().then(res => {
       this.router.navigateByUrl('/logowanie');
     });
   }

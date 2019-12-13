@@ -41,7 +41,7 @@
                             </div>
                             <div class="row">
                                 <label>Potwierdź hasło* </label>
-                                <input #confirmPassword type="text" class="form-control"
+                                <input #confirmPassword type="password" class="form-control"
                                     formControlName="confirmPassword">
                                 <div *ngIf="password.invalid && password.touched" class="alert alert-danger">
                                     <div *ngIf="password !== confirmPassword">
@@ -59,7 +59,7 @@
                             </div>
 
                             <div class="row mt-2">
-                                <button class="btn btn-success" (click)="onRegistered()">Zarejestruj</button>
+                                <button class="btn btn-success" (click)="onRegistered()" routerLink="/logowanie">Zarejestruj</button>
                             </div>
                             <div class="row mt-3">
                                 <p>Masz już konto?</p>
