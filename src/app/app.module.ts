@@ -10,7 +10,8 @@ import { TourComponent } from './tour/tour.component';
 import { AddtourComponent } from './addtour/addtour.component';
 import { RatingModule } from 'ng-starrating';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatSidenavModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
@@ -25,7 +26,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AngularFireModule } from '@angular/fire'
-import { AngularFireAuthModule} from '@angular/fire/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
@@ -59,6 +60,7 @@ import { AdminComponent } from './admin/admin.component';
     RegulationsComponent,
     AdminComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,6 @@ import { AdminComponent } from './admin/admin.component';
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
-    MatSidenavModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
@@ -77,7 +78,8 @@ import { AdminComponent } from './admin/admin.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     NgbModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent],

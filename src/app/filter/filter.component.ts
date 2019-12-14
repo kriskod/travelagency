@@ -25,10 +25,6 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  submitFilter() {
-    this.filterDialogRef.close(this.filterGroup.value)
-  }
-
   closeFilter() {
     this.filterDialogRef.close()
   }

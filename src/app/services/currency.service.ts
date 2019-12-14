@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Currency } from '../models/tourStructure.model';
+
+export enum Currency{
+ PLN,
+ EUR,
+ USD,
+ GBP
+}
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +13,7 @@ import { Currency } from '../models/tourStructure.model';
 export class CurrencyService {
 
   constructor() { }
+
 
   currencyChange = new Map(
     [

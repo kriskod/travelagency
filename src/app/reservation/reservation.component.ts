@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { tourData } from '../tour/tourData.model';
+import { ShoppingcartService } from '../services/shoppingcart.service';
+import { tourStructure } from '../models/tourStructure.model';
 
 @Component({
   selector: 'app-reservation',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor() { }
+  private products: tourStructure[] = []
+
+  constructor(private ShoppingCartService: ShoppingcartService) { }
 
   ngOnInit() {
+    this.products = this.ShoppingCartService.getCartProducts()
+    console.log(this.products)
   }
 
+  totalPrice() {
+    if (this.products.length > 0)
+      return this.products.map(product => product.price * product.quantity).reduce((acc, val) => acc + val);
+  }
 }

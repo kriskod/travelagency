@@ -3,13 +3,13 @@ import { tourStructure } from '../models/tourStructure.model';
 export const tourData: tourStructure[] = [
     {
         id: 0,
-        name: 'Super wycieczka',
+        name: 'Wakacje na Malediwach',
         destinationCountry: 'Malediwy',
         startDate: new Date('2019-06-12'),
         finishDate: new Date('2019-06-22'),
         price: 4000,
-        maxSeats: 5,
-        leftSeats: 2,
+        maxSeats: 15,
+        leftSeats: 15,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 2.1
@@ -17,13 +17,13 @@ export const tourData: tourStructure[] = [
 
     {
         id: 1,
-        name: 'Słońce morze góry zorze',
+        name: 'Greccy bogowie',
         destinationCountry: 'Grecja',
         startDate: new Date('2019-06-12'),
         finishDate: new Date('2019-06-22'),
         price: 2000,
-        maxSeats: 8,
-        leftSeats: 8,
+        maxSeats: 23,
+        leftSeats: 23,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 3.8
@@ -31,13 +31,13 @@ export const tourData: tourStructure[] = [
 
     {
         id: 2,
-        name: 'Lorem ipsum',
+        name: 'W gorącym Dubaju',
         destinationCountry: 'Dubaj',
         startDate: new Date('2019-06-12'),
         finishDate: new Date('2019-06-22'),
         price: 8000,
-        maxSeats: 6,
-        leftSeats: 5,
+        maxSeats: 12,
+        leftSeats: 12,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 0
@@ -50,8 +50,8 @@ export const tourData: tourStructure[] = [
         startDate: new Date('2019-06-12'),
         finishDate: new Date('2019-06-22'),
         price: 3500,
-        maxSeats: 4,
-        leftSeats: 3,
+        maxSeats: 14,
+        leftSeats: 14,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 4.5
@@ -59,13 +59,13 @@ export const tourData: tourStructure[] = [
 
     {
         id: 4,
-        name: 'Wybrzeże wojny',
+        name: 'Tureckie marzenie',
         destinationCountry: 'Turcja',
         startDate: new Date('2019-06-12'),
         finishDate: new Date('2019-06-22'),
         price: 4200,
         maxSeats: 12,
-        leftSeats: 10,
+        leftSeats: 12,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 5
@@ -78,8 +78,8 @@ export const tourData: tourStructure[] = [
         startDate: new Date('2019-06-12'),
         finishDate: new Date('2019-06-22'),
         price: 6300,
-        maxSeats: 3,
-        leftSeats: 2,
+        maxSeats: 30,
+        leftSeats: 25,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 0
@@ -87,7 +87,7 @@ export const tourData: tourStructure[] = [
 
     {
         id: 6,
-        name: '4000 brutto minmalna',
+        name: 'Krakowskie przedmieścia',
         destinationCountry: 'Polska',
         startDate: new Date('2019-06-12'),
         finishDate: new Date('2019-06-22'),
@@ -101,13 +101,13 @@ export const tourData: tourStructure[] = [
 
     {
         id: 7,
-        name: 'Wycieczka objazdowa',
+        name: 'Wschodnie kresy',
         destinationCountry: 'Ukraina',
         startDate: new Date('2019-06-12'),
         finishDate: new Date('2019-06-22'),
         price: 3700,
-        maxSeats: 6,
-        leftSeats: 6,
+        maxSeats: 60,
+        leftSeats: 60,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin libero vel tellus congue, ac scelerisque nisl ullamcorper. Fusce luctus porta augue, sed pellentesque ipsum rhoncus in. Nam aliquet ex arcu, et venenatis dui ullamcorper non. Nunc tincidunt urna arcu, et auctor odio ultricies sit amet. Nulla placerat diam sed libero congue blandit.',
         imagePath: 'assets/malediwy.jpg',
         rate: 0
