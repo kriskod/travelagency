@@ -24,7 +24,7 @@ export class TourlistComponent implements OnInit {
       err => console.log(err)
     )
   }
-  
+
 
   ngOnInit() {
     this.getTours()
@@ -40,10 +40,9 @@ export class TourlistComponent implements OnInit {
     )
   }
 
-  onSearch(searchTerm: string){
-    if(searchTerm)
+  onSearch(searchTerm: string) {
     this.searchTerm = searchTerm
-    
+
   }
 
 }

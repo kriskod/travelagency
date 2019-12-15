@@ -25,6 +25,8 @@ export class FilterComponent implements OnInit {
     });
   }
   submit() {
-    this.filter.emit(this.filterGroup.value.destination)
+    let searchTerm = this.filterGroup.value.destination
+    if (searchTerm !== undefined)
+      this.filter.emit(searchTerm)
   }
 }
