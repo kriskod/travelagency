@@ -36,6 +36,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AdminComponent } from './admin/admin.component';
 import { MaterialModule } from './models/material.module';
+import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -61,6 +63,7 @@ import { MaterialModule } from './models/material.module';
     MainPageComponent,
     RegulationsComponent,
     AdminComponent,
+    ProgressSpinnerComponent,
 
 
   ],
@@ -80,7 +83,8 @@ import { MaterialModule } from './models/material.module';
     AngularFireAuthModule,
     NgbModule,
     AngularFireDatabaseModule,
-    MaterialModule
+    MaterialModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

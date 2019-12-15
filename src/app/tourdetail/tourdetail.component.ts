@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { tourStructure } from '../models/tourStructure.model';
 import { TourService } from '../services/tour.service';
 import { ActivatedRoute } from '@angular/router';
 import { ShoppingcartService } from '../services/shoppingcart.service';
 import { CurrencyPipe } from '../pipes/currency.pipe';
+import { NgxSpinnerService } from "ngx-spinner"; 
 
 @Component({
   selector: 'app-tourdetail',
@@ -14,10 +15,12 @@ export class TourdetailComponent implements OnInit {
 
   private tour: tourStructure
 
-  constructor(private route: ActivatedRoute, private tourService: TourService, private ShoppingCartService: ShoppingcartService) { }
+  constructor(private route: ActivatedRoute, private tourService: TourService, private ShoppingCartService: ShoppingcartService, private spinnerService: NgxSpinnerService ) { }
 
   getCartProduct(id: number) {
+    this.spinnerService.show()
     this.tourService.getProduct(id)
+    this.spinnerService.hide()
   }
 
   onTourBooked() {

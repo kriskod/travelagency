@@ -15,9 +15,6 @@
                 <a class="nav-link clickable" (click)="onDialogOpened()">Dodaj wycieczke</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link clickable" (click)="onFilterClicked()">Filtr</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link clickable" routerLink="lista-wycieczek" routerLinkActive="active">Oferta</a>
             </li>
         </ul>
@@ -32,8 +29,8 @@
                     </div>
                 </div>
             </div>
-            <form class="form-inline my-2 my-lg-0">
-                <a class="btn btn-success btn-md ml-3 clickable" routerLink="/app/koszyk" routerLinkActive="active">
+            <form class="form-inline my-2 my-lg-0 mx-lg-3">
+                <a class="btn btn-success btn-md clickable" routerLink="/app/koszyk" routerLinkActive="active">
                     <i class="fa fa-shopping-cart"></i> Koszyk
                     <span class="badge badge-light">{{cartProductCount}}</span>
                 </a>

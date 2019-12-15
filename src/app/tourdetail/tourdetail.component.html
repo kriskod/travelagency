@@ -31,9 +31,11 @@
                     </ul>
 
                     <div class="action mt-4 align-self-center">
-                        <button class="add-to-cart btn btn-default" type="button" (click)="onCartAdded(product)">Dodaj do
-              koszyka</button>
-                        <button class="like btn btn-default ml-2" type="button"><span class="fa fa-heart"></span></button>
+                        <button class="add-to-cart btn btn-default" type="button" (click)="onCartAdded(product)">Dodaj
+                            do
+                            koszyka</button>
+                        <button class="like btn btn-default ml-2" type="button"><span
+                                class="fa fa-heart"></span></button>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -44,7 +46,8 @@
                     <p class="product-description mt-2" style="font-size: 18px;">{{tour?.description}}</p>
                     <hr>
                     <h4 class="price">Obecna cena: <span>{{tour?.price}} </span></h4>
-                    <p class="vote" style="font-size: 17px;"><strong>91%</strong> kupującym podobała się ta wycieczka! <strong>(17 głosów)</strong></p>
+                    <p class="vote" style="font-size: 17px;"><strong>91%</strong> kupującym podobała się ta wycieczka!
+                        <strong>(17 głosów)</strong></p>
                     <hr>
                     <h4 class="sizes">Miejsca:
                         <span class="size" data-toggle="tooltip" title="small">{{tour?.leftSeats}}</span>
@@ -53,6 +56,8 @@
             </div>
         </div>
     </div>
+    <ngx-spinner [fullScreen]="true" type="ball-clip-rotate-multiple" size="medium">
+    </ngx-spinner>
 </div>
 
 <br><br>
