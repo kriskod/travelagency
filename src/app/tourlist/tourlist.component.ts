@@ -11,6 +11,7 @@ import { CurrencyService } from '../services/currency.service';
 export class TourlistComponent implements OnInit {
 
   tours: tourStructure[] = [];
+  searchTerm: string = "";
 
   constructor(private tourService: TourService, private curencyService: CurrencyService) { }
 
@@ -23,6 +24,7 @@ export class TourlistComponent implements OnInit {
       err => console.log(err)
     )
   }
+  
 
   ngOnInit() {
     this.getTours()
@@ -36,6 +38,12 @@ export class TourlistComponent implements OnInit {
       },
       err => console.log(err)
     )
+  }
+
+  onSearch(searchTerm: string){
+    if(searchTerm)
+    this.searchTerm = searchTerm
+    
   }
 
 }

@@ -13,7 +13,7 @@ export class FilterComponent implements OnInit {
 
   filterGroup: FormGroup
 
-  constructor(private filterDialogRef: MatDialogRef<FilterComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor() { }
 
   ngOnInit() {
     this.filterGroup = new FormGroup({
@@ -24,8 +24,7 @@ export class FilterComponent implements OnInit {
       maxPrice: new FormControl(''),
     });
   }
-
-  closeFilter() {
-    this.filterDialogRef.close()
+  submit() {
+    this.filter.emit(this.filterGroup.value.destination)
   }
 }

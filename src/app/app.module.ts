@@ -10,7 +10,7 @@ import { TourComponent } from './tour/tour.component';
 import { AddtourComponent } from './addtour/addtour.component';
 import { RatingModule } from 'ng-starrating';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule, MatToolbarModule, MatListModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { RouterModule } from '@angular/router';
@@ -35,6 +35,8 @@ import { RegulationsComponent } from './regulations/regulations.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AdminComponent } from './admin/admin.component';
+import { MaterialModule } from './models/material.module';
+
 
 
 
@@ -69,7 +71,6 @@ import { AdminComponent } from './admin/admin.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    MatDialogModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
@@ -79,7 +80,7 @@ import { AdminComponent } from './admin/admin.component';
     AngularFireAuthModule,
     NgbModule,
     AngularFireDatabaseModule,
-    MatSidenavModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,32 +1,27 @@
+<h2 class="text-center mt-2">Filtr</h2>
+<span class="menu-spacer"></span>
 <form [formGroup]="filterGroup">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm">
-                <label>Kraj</label>
-                <input type="text" class="form-control" formControlName="destination">
-            </div>
-            <div class="col-sm">
-                <label>Data rozpoczęcia</label>
-                <input type="date" class="form-control" formControlName="minDate">
-            </div>
-            <div class="col-sm">
-                <label>Data zakończenia</label>
-                <input type="date" class="form-control" formControlName="maxDate">
-            </div>
-            <div class="col-sm">
-                <label>Cena od</label>
-                <input type="number" class="form-control" formControlName="minPrice" min="0">
-            </div>
-            <div class="col-sm">
-                <label>Cena do</label>
-                <input type="number" class="form-control" formControlName="maxPrice" min="0">
-            </div>
-            <div class="cos-sm">
-                <div class="row ml-3">
-                    <button type="close" class="btn btn-primary" (click)="closeFilter()">Zamknij</button>
-                </div>
+        <div class="col-sm">
 
+            <label>Kraj</label>
+            <input type="text" class="form-control" formControlName="destination">
+
+            <label>Data rozpoczęcia</label>
+            <input type="date" class="form-control" formControlName="minDate">
+
+            <label>Data zakończenia</label>
+            <input type="date" class="form-control" formControlName="maxDate">
+
+            <label>Cena od</label>
+            <input type="number" class="form-control" formControlName="minPrice" min="0">
+
+            <label>Cena do</label>
+            <input type="number" class="form-control" formControlName="maxPrice" min="0">
+            <div class="row justify-content-sm-center mt-3">
+                <button class="btn btn-dark" (click)="submit()">Szukaj</button>
             </div>
+
         </div>
     </div>
 </form>

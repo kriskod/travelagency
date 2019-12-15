@@ -1,13 +1,17 @@
-<div class="containter-fluid">
-    <mat-side-container>
-        <mat-sidenav>
-            Filter
-        </mat-sidenav>
-        <mat-sidenav-content>
-            to coś jest
-        </mat-sidenav-content>
-    </mat-side-container>
-    <div class="col-xl">
-        <app-tour [tour]="tour" *ngFor="let tour of tours" (removeTour)="removeProduct(tour)"></app-tour>
-    </div>
+<div class="container-fluid">
+    <mat-drawer-container autosize>
+        <mat-drawer #drawer class="sidenav" mode="side">
+            <app-filter (filter)="onSearch($event)"></app-filter>
+        </mat-drawer>
+
+        <div class="sidenav-content">
+            <button class="btn btn-dark" type="button" (click)="drawer.toggle()">
+                Filtr
+            </button>
+        </div>
+        <div class="col-xl">
+            <app-tour [tour]="tour" *ngFor="let tour of tours | filter: search" (removeTour)="removeProduct(tour)"></app-tour>
+        </div>
+    </mat-drawer-container>
+
 </div>
