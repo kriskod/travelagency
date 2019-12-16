@@ -7,6 +7,7 @@ import { ShoppingcartService } from '../services/shoppingcart.service';
 import { FilterComponent } from '../filter/filter.component';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { FireDbToursService } from '../services/fire-db-tours.service';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +25,8 @@ export class HeaderComponent implements OnInit {
     private dialog: MatDialog,
     private cartService: ShoppingcartService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private firedb: FireDbToursService
   ) { }
 
   onTourAdded(product: tourStructure) {
@@ -37,7 +39,11 @@ export class HeaderComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       (tour: tourStructure) => {
         console.log(tour);
-        this.tourService.addProduct(tour)
+        tour.leftSeats = tour.maxSeats
+        tour.rate = 0
+        tour.imagePath = 'assets/malediwy.jpg'
+        // this.tourService.addProduct(tour)
+        this.firedb.addProduct(tour)
       });
   }
 

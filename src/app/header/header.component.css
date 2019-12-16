@@ -17,3 +17,9 @@
 .clickable:hover {
     cursor: pointer;
 }
+
+@media screen and (max-width: 1024px) {
+    #dropdownBasic1 {
+        margin-left: 130px;
+    }
+}

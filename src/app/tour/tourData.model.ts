@@ -2,7 +2,7 @@ import { tourStructure } from '../models/tourStructure.model';
 
 export const tourData: tourStructure[] = [
     {
-        id: 0,
+        id: "KSJDHAKSDH",
         name: 'Wakacje na Malediwach',
         destinationCountry: 'Malediwy',
         startDate: new Date('2019-06-12'),
@@ -16,7 +16,7 @@ export const tourData: tourStructure[] = [
     },
 
     {
-        id: 1,
+        id: "raALSKDASJnd",
         name: 'Greccy bogowie',
         destinationCountry: 'Grecja',
         startDate: new Date('2019-06-12'),
@@ -30,7 +30,7 @@ export const tourData: tourStructure[] = [
     },
 
     {
-        id: 2,
+        id: "dLKSJDALS",
         name: 'W gorącym Dubaju',
         destinationCountry: 'Dubaj',
         startDate: new Date('2019-06-12'),
@@ -44,7 +44,7 @@ export const tourData: tourStructure[] = [
     },
 
     {
-        id: 3,
+        id: "dmLKSHJDKJ",
         name: 'Barcelona piękna barcelona',
         destinationCountry: 'Hiszpania',
         startDate: new Date('2019-06-12'),
@@ -58,7 +58,7 @@ export const tourData: tourStructure[] = [
     },
 
     {
-        id: 4,
+        id: "dkajsdkDE",
         name: 'Tureckie marzenie',
         destinationCountry: 'Turcja',
         startDate: new Date('2019-06-12'),
@@ -72,7 +72,7 @@ export const tourData: tourStructure[] = [
     },
 
     {
-        id: 5,
+        id: "dlkSDDS",
         name: 'Portugalskie sekrety',
         destinationCountry: 'Portugalia',
         startDate: new Date('2019-06-12'),
@@ -86,7 +86,7 @@ export const tourData: tourStructure[] = [
     },
 
     {
-        id: 6,
+        id: "dLAKSdA",
         name: 'Krakowskie przedmieścia',
         destinationCountry: 'Polska',
         startDate: new Date('2019-06-12'),
@@ -100,7 +100,7 @@ export const tourData: tourStructure[] = [
     },
 
     {
-        id: 7,
+        id: "dMAdSDaSD",
         name: 'Wschodnie kresy',
         destinationCountry: 'Ukraina',
         startDate: new Date('2019-06-12'),

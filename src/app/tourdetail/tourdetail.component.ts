@@ -4,7 +4,8 @@ import { TourService } from '../services/tour.service';
 import { ActivatedRoute } from '@angular/router';
 import { ShoppingcartService } from '../services/shoppingcart.service';
 import { CurrencyPipe } from '../pipes/currency.pipe';
-import { NgxSpinnerService } from "ngx-spinner"; 
+import { NgxSpinnerService } from "ngx-spinner";
+import { FireDbToursService } from '../services/fire-db-tours.service';
 
 @Component({
   selector: 'app-tourdetail',
@@ -15,12 +16,16 @@ export class TourdetailComponent implements OnInit {
 
   private tour: tourStructure
 
-  constructor(private route: ActivatedRoute, private tourService: TourService, private ShoppingCartService: ShoppingcartService, private spinnerService: NgxSpinnerService ) { }
+  constructor(private route: ActivatedRoute, private firedb: FireDbToursService, private ShoppingCartService: ShoppingcartService, private spinnerService: NgxSpinnerService) { }
 
-  getCartProduct(id: number) {
+  getCartProduct(id: string) {
     this.spinnerService.show()
-    this.tourService.getProduct(id)
-    this.spinnerService.hide()
+    this.firedb.getTour(id).subscribe(
+      tour => {
+        this.tour = tour
+        this.spinnerService.hide()
+      }
+    )
   }
 
   onTourBooked() {
@@ -44,13 +49,7 @@ export class TourdetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(
-      params => this.tourService.getProduct(+params["id"]).subscribe (
-        tour => {
-          this.tour = tour
-          console.log(tour)
-      },
-      err => console.log(err)
-      )
+      params => this.getCartProduct(params["id"])
     )
   }
 

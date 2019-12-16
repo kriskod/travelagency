@@ -1,5 +1,5 @@
 export interface tourStructure {
-    id: number;
+    id: string;
     name: string;
     destinationCountry: string;
     startDate: Date;

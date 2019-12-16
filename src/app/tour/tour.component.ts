@@ -12,6 +12,9 @@ export class TourComponent implements OnInit {
   @Input() tour: tourStructure
   @Output() removeTour = new EventEmitter<tourStructure>()
 
+  stars: number[] = [1,2,3,4,5];
+  selectedValue: number;
+
   constructor(private ShoppingCartService: ShoppingcartService) { }
 
   ngOnInit() {
@@ -38,5 +41,11 @@ export class TourComponent implements OnInit {
   onCartAdded(){
     console.log("Dodano do koszyka")
     this.ShoppingCartService.addCartProduct(this.tour)
+  }
+
+  countStar(star) {
+    this.selectedValue = star;
+    this.tour.rate = this.selectedValue;
+    console.log('Ocena: ', star);
   }
 }
