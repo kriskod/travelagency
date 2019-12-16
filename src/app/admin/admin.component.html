@@ -1,12 +1,35 @@
 <div class="containter">
     <div class="card">
         <div class="card-header">
-            Panel administratora
+            <h3>Panel administratora</h3>
         </div>
         <hr>
         <div class="card-body">
-            <a class="btn btn-dark">Zarządzenie użytkownikami</a>
-            <a class="btn btn-dark">Zarządzenie wycieczkami</a>
+            <div class="btn-group">
+                <button type="button" #userManagement class="btn btn-dark">Zarządzenie użytkownikami</button>
+                <button type="button" #tourManagement class="btn btn-dark">Zarządzenie wycieczkami</button>
+            </div>
+
+            <div class="row" *ngIf="userManagement">
+                <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+                <ul *ngIf="users">
+                    <li *ngFor="let user of users">
+                        {{user.username}} {{user.email}}
+                    </li>
+                </ul>
+                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
+
+            <div class="row" *ngIf="tourManagement">
+                <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+                <ul *ngIf="tours">
+                    <li *ngFor="let tour of tours">
+                        {{tour.name}} {{tour.destination}}
+                    </li>
+                </ul>
+                <button class="btn btn-danger">Usuń wycieczke</button>
+                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
         </div>
     </div>
 </div>

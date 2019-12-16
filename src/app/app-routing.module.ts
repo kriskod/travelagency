@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegulationsComponent } from './regulations/regulations.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { AuthGuard } from './services/auth-guard';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'rezerwacja', component: ReservationComponent },
       { path: 'regulamin', component: RegulationsComponent },
       { path: 'strona-glowna', component: MainPageComponent},
+      { path: 'panel-administratora', component: AdminComponent}
     ]
   },
 ];

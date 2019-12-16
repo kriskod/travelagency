@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user.model';
+import { UserStructure } from '../models/user.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -12,15 +12,24 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUser(id): Observable<User>{
-    return this.httpClient.get<User>(`/api/users/${id}`);
+  getUser(id): Observable<UserStructure>{
+    return this.httpClient.get<UserStructure>(`/api/users/${id}`);
   }
 
-  getUsers():Observable<User[]>{
-    return this.httpClient.get<User[]>(`/api/users`);
+  getUsers():Observable<UserStructure[]>{
+    return this.httpClient.get<UserStructure[]>(`/api/users`);
+  }
+
+  getUserEmail(email: string): Observable<UserStructure>{
+    return this.httpClient.get<UserStructure>(`${this.apiUrl}/email/${email}`);
+  }
+
+  deleteUser(user: UserStructure) {
+    let id = user._id;
+    return this.httpClient.delete(`${this.apiUrl}/${id}`);
   }
   
-  async postUser(user: User) {
+  async postUser(user: UserStructure) {
     try {
       const data = await this.httpClient.post(`/api/users`, user)
         .toPromise();
