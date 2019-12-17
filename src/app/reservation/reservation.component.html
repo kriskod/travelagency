@@ -3,14 +3,39 @@
         <h1 class="jumbotron-heading">Podsumowanie</h1>
     </div>
 </section>
-<div class="card text-center" *ngFor="let product of products">
+<div class="card text-center">
     <div class="card-header">
         <img class="img-fluid" src="assets/malediwy.jpg">
     </div>
     <div class="card-body">
-        <h5 class="card-title">{{product.name}}</h5>
-        <p class="card-text">Ilość osób : {{product.quantity}}</p>
-        <p class="card-text">Do zapłaty : {{product.price * product.quantity}} zł</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Wycieczka</th>
+                    <th>Ilość osób</th>
+                    <th>Do zapłaty</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.price * product.quantity}} zł</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="card-footer text-muted text-center">
