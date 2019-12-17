@@ -10,7 +10,8 @@ import { tourStructure } from '../models/tourStructure.model';
 })
 export class ReservationComponent implements OnInit {
 
-  private products: tourStructure[] = []
+  private products: tourStructure[] = [];
+  private boughtProducts: tourStructure[] = [];
 
   constructor(private ShoppingCartService: ShoppingcartService) { }
 
@@ -23,4 +24,5 @@ export class ReservationComponent implements OnInit {
     if (this.products.length > 0)
       return this.products.map(product => product.price * product.quantity).reduce((acc, val) => acc + val);
   }
+
 }

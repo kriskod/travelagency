@@ -4,6 +4,8 @@ import { UserService } from '../services/user.service';
 import { first } from 'rxjs/internal/operators/first';
 import { tourStructure } from '../models/tourStructure.model';
 import { TourService } from '../services/tour.service';
+import { FireDbUsersService } from '../services/fire-db-users.service';
+import { FireDbToursService } from '../services/fire-db-tours.service';
 
 @Component({
   selector: 'app-admin',
@@ -15,22 +17,34 @@ export class AdminComponent implements OnInit {
   loading = false;
   users: UserStructure[] = [];
   tours: tourStructure[] = [];
-
-  constructor(private userService: UserService, private tourService: TourService) { }
+  userManagement = false;
+  tourManagement = false;
+  constructor(private userService: FireDbUsersService, private tourService: FireDbToursService) { }
 
   ngOnInit() {
+  }
+  loadUsers(){
+    this.offManagment();
     this.loading = true;
-    this.userService.getUsers().pipe(first()).subscribe(users => {
+    this.userService.getUsers().subscribe(users => {
+      this.userManagement = true;
       this.loading = false;
       this.users = users;
       console.log(users)
     })
+  }
+  loadTours(){
+    this.offManagment();
     this.loading = true;
-    this.tourService.getProducts().pipe(first()).subscribe(tours => {
+    this.tourService.getTours().subscribe(tours => {
+      this.tourManagement = true;
       this.loading = false;
       this.tours = tours;
       console.log(tours)
     })
   }
-
+  offManagment(){
+    this.tourManagement = false;
+    this.userManagement = false;
+  }
 }

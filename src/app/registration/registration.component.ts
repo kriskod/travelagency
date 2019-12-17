@@ -3,6 +3,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { FireDbUsersService } from '../services/fire-db-users.service';
+import { UserStructure } from '../models/user.model'
+import { Role } from '../models/role.model';
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +16,8 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private authService: AuthService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private fireDbUserService: FireDbUsersService
   ) { }
 
   registerForm: FormGroup
@@ -46,6 +50,7 @@ export class RegistrationComponent implements OnInit {
       this.authService.register({ email: this.f.email.value, password: this.f.password.value }).then(
         resolve => {
           console.log(resolve)
+          this.fireDbUserService.addUser({_id: "",username: this.f.name.value, email: this.f.email.value, role: Role.User })
           this.router.navigate['/logowanie']
         })
     } else {

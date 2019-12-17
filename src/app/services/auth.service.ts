@@ -23,6 +23,7 @@ export class AuthService {
   constructor(private userService: UserService, private fireAuth: AngularFireAuth) { }
 
   private activeUser: UserStructure;
+  private admin = false;
 
   get user(): User | null {
     return this.fireAuth.auth.currentUser;
@@ -55,6 +56,16 @@ export class AuthService {
     }
     else {
       return this.activeUser
+    }
+  }
+
+  isAdmin(){
+    if(this.activeUser.role === 'Admin'){
+      this.admin = true;
+      return this.admin
+    }
+    else {
+      console.log("Podany użytkownik nie ma uprawnień administratora")
     }
   }
 }

@@ -30,7 +30,7 @@ const routes: Routes = [
       { path: 'rezerwacja', component: ReservationComponent },
       { path: 'regulamin', component: RegulationsComponent },
       { path: 'strona-glowna', component: MainPageComponent},
-      { path: 'panel-administratora', component: AdminComponent}
+      { path: 'admin', component: AdminComponent},
     ]
   },
 ];

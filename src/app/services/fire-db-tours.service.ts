@@ -28,7 +28,7 @@ export class FireDbToursService {
   }
 
   getTours() {
-    return this.db.list('/wycieczki/').valueChanges();
+    return this.db.list<tourStructure>('/wycieczki/').valueChanges();
   }
 
   getTour(id: string): Observable<tourStructure> {
@@ -36,6 +36,8 @@ export class FireDbToursService {
       res => res.payload.val()
     ))
   }
+
+
 
 
 }

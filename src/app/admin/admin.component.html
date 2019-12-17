@@ -1,13 +1,13 @@
-<div class="containter">
+<div class="containter-fluid">
     <div class="card">
-        <div class="card-header">
+        <div class="card-header text-center">
             <h3>Panel administratora</h3>
         </div>
         <hr>
-        <div class="card-body">
+        <div class="card-body text-center">
             <div class="btn-group">
-                <button type="button" #userManagement class="btn btn-dark">Zarządzenie użytkownikami</button>
-                <button type="button" #tourManagement class="btn btn-dark">Zarządzenie wycieczkami</button>
+                <button type="button" class="btn btn-dark" (click)="loadUsers()">Zarządzenie użytkownikami</button>
+                <button type="button" class="btn btn-dark" (click)="loadTours()">Zarządzenie wycieczkami</button>
             </div>
 
             <div class="row" *ngIf="userManagement">
@@ -15,20 +15,47 @@
                 <ul *ngIf="users">
                     <li *ngFor="let user of users">
                         {{user.username}} {{user.email}}
+                        <div class="btn-group">
+                            <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            <button class="btn btn-danger"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                        </div>
                     </li>
                 </ul>
-                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
             </div>
 
-            <div class="row" *ngIf="tourManagement">
+            <div class="flex-row justify-content-center" *ngIf="tourManagement">
                 <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-                <ul *ngIf="tours">
-                    <li *ngFor="let tour of tours">
-                        {{tour.name}} {{tour.destination}}
-                    </li>
-                </ul>
-                <button class="btn btn-danger">Usuń wycieczke</button>
-                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                <div *ngIf="tours">
+                    <div class="">
+                        <table class="fixed table table-striped col-xl-12 text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col-md">id</th>
+                                    <th scope="col-md">Name</th>
+                                    <th scope="col-md">Destination</th>
+                                    <th scope="col-md">Price</th>
+                                    <th scope="col-md">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let tour of tours">
+                                    <th scope="row">{{tour.id}}</th>
+                                    <td>{{tour.name}}</td>
+                                    <td>{{tour.destinationCountry}}</td>
+                                    <td>{{tour.price}} zł</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button class="btn btn-danger border-dark"><i class="fa fa-trash"
+                                                    aria-hidden="true"></i></button>
+                                            <button class="btn btn-info border-dark"><i class="fa fa-edit"
+                                                    aria-hidden="true"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

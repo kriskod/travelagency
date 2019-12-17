@@ -8,6 +8,8 @@ import { FilterComponent } from '../filter/filter.component';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { FireDbToursService } from '../services/fire-db-tours.service';
+import { UserStructure } from '../models/user.model';
+import { FireDbUsersService } from '../services/fire-db-users.service';
 
 @Component({
   selector: 'app-header',
@@ -19,14 +21,16 @@ export class HeaderComponent implements OnInit {
   isCollapsed = false;
   cartProductCount: number = 0
   searchTour: any = {}
-  user: String;
+  user: UserStructure;
+  isLoaded = false;
 
   constructor(private tourService: TourService,
     private dialog: MatDialog,
     private cartService: ShoppingcartService,
     private authService: AuthService,
     private router: Router,
-    private firedb: FireDbToursService
+    private firedb: FireDbToursService,
+    private fireDbUserService: FireDbUsersService
   ) { }
 
   onTourAdded(product: tourStructure) {
@@ -71,7 +75,12 @@ export class HeaderComponent implements OnInit {
   }
 
   showActiveUser() {
-    this.user = this.authService.user.email;
+    let mail = this.authService.user.email;
+    this.fireDbUserService.getUserByMail(mail).subscribe(users =>{
+      this.user = users[0];
+      console.log(this.user)
+      this.isLoaded = true;
+    }); 
   }
   logoutUser() {
     this.authService.logout().then(res => {
