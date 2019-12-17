@@ -2,41 +2,24 @@
     <div class="card">
         <div class="container-fluid">
             <div class="wrapper row">
-                <div class="preview col-md-6">
-
-                    <div class="preview-pic tab-content">
-                        <div class="tab-pane active" id="pic-1"><img src="assets/malediwy.jpg" /></div>
-                        <div class="tab-pane rounded-3" id="pic-2"><img src="assets/2.jpg" /></div>
-                        <div class="tab-pane" id="pic-3"><img src="assets/3.jpg" /></div>
-                        <div class="tab-pane" id="pic-4"><img src="assets/4.jpg" /></div>
-                        <div class="tab-pane" id="pic-5"><img src="assets/5.jpg" /></div>
-
-                    </div>
-                    <ul class="preview-thumbnail nav nav-tabs">
-                        <li>
-                            <a data-target="#pic-1" data-toggle="tab"><img src="assets/malediwy.jpg" /></a>
-                        </li>
-                        <li>
-                            <a data-target="#pic-2" data-toggle="tab"><img src="assets/2.jpg" /></a>
-                        </li>
-                        <li>
-                            <a data-target="#pic-3" data-toggle="tab"><img src="assets/3.jpg" /></a>
-                        </li>
-                        <li>
-                            <a data-target="#pic-4" data-toggle="tab"><img src="assets/4.jpg" /></a>
-                        </li>
-                        <li>
-                            <a data-target="#pic-5" data-toggle="tab"><img src="assets/5.jpg" /></a>
-                        </li>
-                    </ul>
-
-                    <div class="action mt-4 align-self-center">
-                        <button class="add-to-cart btn btn-default" type="button" (click)="onCartAdded(product)">Dodaj
-                            do
-                            koszyka</button>
-                        <button class="like btn btn-default ml-2" type="button"><span
-                                class="fa fa-heart"></span></button>
-                    </div>
+                <div class="preview col-md-6 my-auto ">
+                    <ngb-carousel>
+                        <ng-template ngbSlide>
+                            <div class="picsum-img-wrapper">
+                                <img src="http://4.bp.blogspot.com/-NXJJeFyG81I/VmJtx0dxPFI/AAAAAAAABFA/ce5-CjbU8SU/s1600/mountain_landscape-wallpaper-1280x1024.jpg" alt="first slide">
+                            </div>
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <div class="picsum-img-wrapper">
+                                <img src="http://hd.wallpaperswide.com/thumbs/landscape_in_argentina-t2.jpg" alt="second slide">
+                            </div>
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <div class="picsum-img-wrapper">
+                                <img src="https://cdn-ep19.pressidium.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/08/aspect-ratio-landscape-photography-1.jpg.webp" alt="third slide">
+                            </div>
+                        </ng-template>
+                    </ngb-carousel>
                 </div>
                 <div class="col-md-6">
                     <div class="details col-md">

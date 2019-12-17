@@ -25,4 +25,9 @@ export class ReservationComponent implements OnInit {
       return this.products.map(product => product.price * product.quantity).reduce((acc, val) => acc + val);
   }
 
+  onReservationSubmit(){
+    this.boughtProducts = this.products
+    console.log(this.boughtProducts)
+    return this.boughtProducts
+  }
 }

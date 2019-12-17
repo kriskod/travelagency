@@ -3,7 +3,7 @@
         <h1 class="jumbotron-heading">Podsumowanie</h1>
     </div>
 </section>
-<div class="card text-center">
+<div class="card text-center" *ngFor="let product of products">
     <div class="card-header">
         <img class="img-fluid" src="assets/malediwy.jpg">
     </div>
@@ -12,9 +12,9 @@
         <p class="card-text">Ilość osób : {{product.quantity}}</p>
         <p class="card-text">Do zapłaty : {{product.price * product.quantity}} zł</p>
     </div>
-    <div class="card-footer text-muted">
-        <button class="btn btn-light p-3" routerLink="/app/koszyk">Powrót</button>
-        <button class="btn btn-light p-3">Do kasy</button>
-    </div>
+</div>
+<div class="card-footer text-muted text-center">
+    <button class="btn btn-light p-3" routerLink="/app/koszyk">Powrót</button>
+    <button class="btn btn-light p-3" (click)="onReservationSubmit()" *ngIf="products.length > 0">Do kasy</button>
 </div>
 <br>
