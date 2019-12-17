@@ -6,3 +6,16 @@ export interface UserStructure {
     email: string;
     role: Role;
 }
+
+
+//Krzychu
+//krzychu@mail.com
+//krzychu
+
+//Jacek
+//jacek@mail.com
+//jacek123
+
+//admin
+//adminek@mail.com
+//123456789

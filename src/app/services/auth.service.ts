@@ -41,23 +41,23 @@ export class AuthService {
     return this.fireAuth.auth.signOut();
   }
 
-  get userRole() {
-    if (!this.activeUser) {
-      return this.userService.getUserEmail(this.user.email).subscribe(user => user.role)
-    }
-    else {
-      return this.activeUser.role
-    }
-  }
+  // getUserRole() {
+  //   if (this.activeUser) {
+  //     return this.userService.getUserEmail(this.user.email).subscribe(user => user.role)
+  //   }
+  //   else {
+  //     return this.activeUser.role
+  //   }
+  // }
 
-  currentUser() {
-    if(!this.activeUser){
-      return this.userService.getUserEmail(this.user.email)
-    }
-    else {
-      return this.activeUser
-    }
-  }
+  // getcurrentUser() {
+  //   if(!this.activeUser){
+  //     return this.userService.getUserEmail(this.user.email)
+  //   }
+  //   else {
+  //     return this.activeUser
+  //   }
+  // }
 
   isAdmin(){
     if(this.activeUser.role === 'Admin'){

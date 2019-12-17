@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserStructure } from '../models/user.model';
-import { UserService } from '../services/user.service';
-import { first } from 'rxjs/internal/operators/first';
 import { tourStructure } from '../models/tourStructure.model';
-import { TourService } from '../services/tour.service';
 import { FireDbUsersService } from '../services/fire-db-users.service';
 import { FireDbToursService } from '../services/fire-db-tours.service';
 
@@ -46,5 +43,13 @@ export class AdminComponent implements OnInit {
   offManagment(){
     this.tourManagement = false;
     this.userManagement = false;
+  }
+
+  removeProduct(product: tourStructure) {
+    this.tourService.removeProduct(product)  
+  }
+
+  removeUser(user: UserStructure){
+    this.userService.removeUser(user)
   }
 }

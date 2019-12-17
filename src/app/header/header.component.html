@@ -10,10 +10,10 @@
                 <a class="nav-link clickable" routerLink="strona-glowna" routerLinkActive="active">Strona Główna</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link clickable" (click)="onDialogOpened()">Dodaj wycieczke</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link clickable" routerLink="lista-wycieczek" routerLinkActive="active">Oferta</a>
+            </li>
+            <li class="nav-item" *ngIf="user.role === 'Admin'">
+                <a class="nav-link clickable" (click)="onDialogOpened()">Dodaj wycieczke</a>
             </li>
         </ul>
         <div class="row">
@@ -23,7 +23,7 @@
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                         <button ngbDropdownItem routerLink="ustawienia">Ustawienia</button>
                         <button ngbDropdownItem routerLink="historia">Historia zamówień</button>
-                        <button ngbDropdownItem routerLink="admin">Panel administratora</button>
+                        <button ngbDropdownItem routerLink="admin" *ngIf="user.role === 'Admin'">Panel administratora</button>
                         <button ngbDropdownItem (click)="logoutUser()">Wyloguj</button>
                     </div>
                 </div>

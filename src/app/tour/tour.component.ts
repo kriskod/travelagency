@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { tourStructure } from '../models/tourStructure.model';
 import { ShoppingcartService } from '../services/shoppingcart.service';
+import { UserStructure } from '../models/user.model';
 
 @Component({
   selector: 'app-tour',
@@ -14,6 +15,7 @@ export class TourComponent implements OnInit {
 
   stars: number[] = [1,2,3,4,5];
   selectedValue: number;
+  user: UserStructure;
 
   constructor(private ShoppingCartService: ShoppingcartService) { }
 
@@ -34,9 +36,6 @@ export class TourComponent implements OnInit {
     this.tour.leftSeats += 1
   }
   
-  onRate($event: { oldRate: number, newRate: number }) {
-    this.tour.rate = $event.newRate;
-  }
 
   onCartAdded(){
     console.log("Dodano do koszyka")

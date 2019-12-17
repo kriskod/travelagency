@@ -4,99 +4,77 @@
     </div>
 </section>
 
-<div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-striped sm-8">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th scope="col"></th>
-                            <th scope="col">Wycieczka</th>
-                            <th scope="col">Dostępność</th>
-                            <th scope="col">Osoby</th>
-                            <th scope="col">Cena</th>
-                            <th> </th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
+<div class="flex-row justify-content-center">
+    <div class="table-responsive">
+        <table class="fixed table table-striped col-xl-12 text-center">
+            <thead>
+                <tr>
+                    <th scope="col-sm">Zdjęcie</th>
+                    <th scope="col-sm">Wycieczka</th>
+                    <th scope="col-sm">Dostępność</th>
+                    <th scope="col-sm">Osoby</th>
+                    <th scope="col-sm">Cena</th>
+                    <th scope="col-sm">Usuń</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <th><img src="assets/malediwy.jpg" height="100" width="150" /></th>
+                    <th class="clickable" [routerLink]="['/szczegóły-wycieczki/', product.id]" routerLinkActive="router-link-active">{{product.name}}</th>
+                    <th *ngIf="product.leftSeats > 0 else noMorePlaces">Tak</th>
+                    <th><input class="form-control" [(ngModel)]="product.quantity" type="number" min="0" max="{{product.leftSeats}}" /></th>
+
+                    <th>{{product.price * product.quantity}} {{product.currency | currency}} zł</th>
+                    <th>
+                        <button class="btn btn-sm btn-danger" (click)="removeFromCart(product)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </th>
+                    <ng-template #noMorePlaces>
+                        <th class="text-center">Nie</th>
+                    </ng-template>
+                </tr>
+            </tbody>
+        </table>
+
     </div>
-</div>
-<div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive sm-8" *ngFor="let product of products">
-                <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <td style="width: 300px;"><img src="assets/malediwy.jpg" height="100" width="150" /></td>
-                            <td style="width: 242px; cursor: pointer;" class="clickable" [routerLink]="['/szczegóły-wycieczki/', product.id]" routerLinkActive="router-link-active">{{product.name}}</td>
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive sm-8" *ngIf="products.length > 0">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Cena całkowita</td>
+                                <td class="text-right">{{totalPrice()}} zł</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><strong>Kod promocyjny</strong></td>
+                                <td class="text-right"><input class="text" placeholder="Wpisz kod promocyjny"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                            <td style="width: 442px;" class="text-center" *ngIf="product.leftSeats > 0 else noMorePlaces">Tak</td>
-
-                            <td style="width: 140px;" class="text-center"><input class="form-control" [(ngModel)]="product.quantity" type="number" min="0" max="{{product.leftSeats}}" />
-                            </td>
-                            <ng-template #noMorePlaces>
-                                <td style="width: 442px;" class="text-center">Nie</td>
-                            </ng-template>
-
-                            <td style="width: 222px;" class="text-center">{{product.price * product.quantity}} {{product.currency | currency}} zł</td>
-                            <td class="text-right">
-                                <button class="btn btn-sm btn-danger" (click)="removeFromCart(product)">
-                  <i class="fa fa-trash"></i>
-                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive sm-8" *ngIf="products.length > 0">
-                <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Cena całkowita</td>
-                            <td class="text-right">{{totalPrice()}} zł</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>Kod promocyjny</strong></td>
-                            <td class="text-right"><input class="text" placeholder="Wpisz kod promocyjny"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="col mb-2">
-                <div class="row">
-                    <div class="col-sm-8 col-md-6">
-                        <button class="btn btn-block btn-light" routerLink="/app/lista-wycieczek">Kontynuuj zakupy</button>
-                    </div>
-                    <div class="col-sm-8 col-md-6">
-                        <button class="btn btn-lg btn-block btn-success text-uppercase" routerLink="/app/rezerwacja">Rezerwuj!</button>
+                <div class="col mb-2">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-6">
+                            <button class="btn btn-block btn-light" routerLink="/app/lista-wycieczek">Kontynuuj
+                                zakupy</button>
+                        </div>
+                        <div class="col-sm-8 col-md-6">
+                            <button class="btn btn-lg btn-block btn-success text-uppercase" routerLink="/app/rezerwacja" [disabled]="products.length === 0">Rezerwuj!</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

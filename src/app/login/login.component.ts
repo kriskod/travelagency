@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     let password = this.f["password"].value
     this.authService.login({ email, password }).then(
       auth => {
+        // this.authService.isAdmin()
         console.log(auth)
         this.router.navigateByUrl('/app')
       }
