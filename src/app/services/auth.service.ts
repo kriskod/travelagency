@@ -23,7 +23,7 @@ export class AuthService {
 
   constructor(private userService: UserService, private fireAuth: AngularFireAuth, private userDbService: FireDbUsersService) { }
 
-  users: UserStructure[] 
+  users: UserStructure[]
   private activeUser: UserStructure;
   private admin = false;
 
@@ -43,16 +43,14 @@ export class AuthService {
     return this.fireAuth.auth.signOut();
   }
 
-  getCurrentUser(){
-    this.activeUser = this.users.find(user => 
-      user.email == this.user.email
-       )
-       return this.activeUser
-    }
+  saveCurrentUserData(userEmail: string) {
+    this.activeUser = this.users.find(user =>
+      user.email == userEmail
+    )
+  }
 
-  isAdmin(user: UserStructure){
-    if(user.role == Role.Admin)
-    return this.admin = true;
+  isAdmin() {
+    return (this.activeUser.role == Role.Admin)
   }
 }
 

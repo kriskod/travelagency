@@ -27,15 +27,13 @@ export class LoginComponent implements OnInit {
   }
 
   logIn() {
-    if(this.loginForm.invalid){
+    if (this.loginForm.invalid) {
       return;
     }
     let email = this.f["email"].value
     let password = this.f["password"].value
     this.authService.login({ email, password }).then(
       auth => {
-        this.authService.isAdmin(this.authService.getCurrentUser())
-        console.log(auth)
         this.router.navigateByUrl('/app')
       }
     )

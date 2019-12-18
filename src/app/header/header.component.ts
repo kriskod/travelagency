@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { FireDbToursService } from '../services/fire-db-tours.service';
 import { UserStructure } from '../models/user.model';
 import { FireDbUsersService } from '../services/fire-db-users.service';
+import { Role } from '../models/role.model';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +24,7 @@ export class HeaderComponent implements OnInit {
   searchTour: any = {}
   user: UserStructure;
   isLoaded = false;
+  isAdmin = false;
 
   constructor(private tourService: TourService,
     private dialog: MatDialog,
@@ -76,12 +78,13 @@ export class HeaderComponent implements OnInit {
 
   showActiveUser() {
     let mail = this.authService.user.email;
-    this.fireDbUserService.getUserByMail(mail).subscribe(users =>{
+    this.fireDbUserService.getUserByMail(mail).subscribe(users => {
       this.user = users[0];
-      console.log(this.user)
+      this.isAdmin = (this.user.role == Role.Admin)
       this.isLoaded = true;
-    }); 
+    });
   }
+
   logoutUser() {
     this.authService.logout().then(res => {
       this.router.navigateByUrl('/logowanie');

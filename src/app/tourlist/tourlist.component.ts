@@ -51,7 +51,7 @@ export class TourlistComponent implements OnInit {
 
   removeProduct(product: tourStructure) {
     //this.tourService.deleteProduct(product)
-    this.firedb.removeProduct(product)  
+    this.firedb.removeProduct(product)
     // this.tourService.deleteProduct(product).subscribe(
     //   response => {
     //     this.getTours()
