@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   cartProductCount: number = 0
   searchTour: any = {}
   user: UserStructure;
-  isLoaded = false;
+
   isAdmin = false;
 
   constructor(private tourService: TourService,
@@ -63,7 +63,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showActiveUser();
+    this.authService.showActiveUser();
     this.cartService.cartLength$.subscribe(
       length => {
         console.log(length)
@@ -74,15 +74,6 @@ export class HeaderComponent implements OnInit {
 
   onSearchResult(results: any) {
     this.searchTour = results;
-  }
-
-  showActiveUser() {
-    let mail = this.authService.user.email;
-    this.fireDbUserService.getUserByMail(mail).subscribe(users => {
-      this.user = users[0];
-      this.isAdmin = (this.user.role == Role.Admin)
-      this.isLoaded = true;
-    });
   }
 
   logoutUser() {

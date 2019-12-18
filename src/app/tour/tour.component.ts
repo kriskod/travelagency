@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { tourStructure } from '../models/tourStructure.model';
 import { ShoppingcartService } from '../services/shoppingcart.service';
 import { UserStructure } from '../models/user.model';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-tour',
@@ -17,9 +18,10 @@ export class TourComponent implements OnInit {
   selectedValue: number;
   user: UserStructure;
 
-  constructor(private ShoppingCartService: ShoppingcartService) { }
+  constructor(private ShoppingCartService: ShoppingcartService, private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.showActiveUser()
   }
 
   onProductRemoved() {

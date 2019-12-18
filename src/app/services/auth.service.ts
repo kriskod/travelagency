@@ -25,7 +25,7 @@ export class AuthService {
 
   users: UserStructure[]
   private activeUser: UserStructure;
-  private admin = false;
+  isLoaded = false;
 
   get user(): User | null {
     return this.fireAuth.auth.currentUser;
@@ -49,8 +49,18 @@ export class AuthService {
     )
   }
 
-  isAdmin() {
-    return (this.activeUser.role == Role.Admin)
+  isAdmin(isTrue) {
+    isTrue = (this.activeUser.role == Role.Admin)
+    return isTrue
+  }
+
+  showActiveUser() {
+    let mail = this.user.email;
+    this.userDbService.getUserByMail(mail).subscribe(users => {
+      this.activeUser = users[0];
+      this.isAdmin(this.activeUser.role == Role.Admin)
+      this.isLoaded = true;
+    });
   }
 }
 
