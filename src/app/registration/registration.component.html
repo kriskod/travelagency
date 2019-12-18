@@ -9,7 +9,7 @@
                             <div class="row">
                                 <label>Nazwa użytkownika* </label>
                                 <input #name type="text" class="form-control" formControlName="name">
-                                <div *ngIf="name.invalid && name.touched" class="alert alert-danger">
+                                <div *ngIf="name.invalid && name.touched" class="invalid-feedback">
                                     <div *ngIf="name.errors.maxLength">
                                         Maksymalnie 12 znaków
                                     </div>
@@ -18,7 +18,7 @@
                             <div class="row">
                                 <label>Email* </label>
                                 <input #email type="email" class="form-control" formControlName="email">
-                                <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
+                                <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
                                     <div *ngIf="email.errors.required">
                                         Podaj prawidłowy email
                                     </div>
@@ -27,7 +27,7 @@
                             <div class="row">
                                 <label>Hasło* </label>
                                 <input #password type="password" class="form-control" formControlName="password">
-                                <div *ngIf="password.invalid && password.touched" class="alert alert-danger">
+                                <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
                                     <div *ngIf="password.errors.maxLength">
                                         Maksymalnie 10 znaków
                                     </div>
@@ -41,8 +41,7 @@
                             </div>
                             <div class="row">
                                 <label>Potwierdź hasło* </label>
-                                <input #confirmPassword type="password" class="form-control"
-                                    formControlName="confirmPassword">
+                                <input #confirmPassword type="password" class="form-control" formControlName="confirmPassword">
                                 <div *ngIf="password.invalid && password.touched" class="alert alert-danger">
                                     <div *ngIf="password !== confirmPassword">
                                         Hasła nie są takie same
@@ -51,8 +50,7 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="form-check form-check-inline">
-                                    <input class="larger mr-3" type="checkbox" required name="terms"> *Zapoznałem się i
-                                    akceptuje regulamin korzystania z Podróżuj z Krzychem
+                                    <input class="larger mr-3" type="checkbox" required name="terms"> *Zapoznałem się i akceptuje regulamin korzystania z Podróżuj z Krzychem
                                 </div>
                                 <button class="btn btn-group mt-2" routerLink="/app/regulamin">Czytaj więcej</button>
 

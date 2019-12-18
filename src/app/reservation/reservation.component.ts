@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { tourData } from '../tour/tourData.model';
 import { ShoppingcartService } from '../services/shoppingcart.service';
 import { tourStructure } from '../models/tourStructure.model';
+import { OrdersService } from '../services/orders.service';
+import { Order } from '../models/order.model';
 
 @Component({
   selector: 'app-reservation',
@@ -11,9 +13,9 @@ import { tourStructure } from '../models/tourStructure.model';
 export class ReservationComponent implements OnInit {
 
   private products: tourStructure[] = [];
-  private boughtProducts: tourStructure[] = [];
+  private boughtProduct: Order
 
-  constructor(private ShoppingCartService: ShoppingcartService) { }
+  constructor(private ShoppingCartService: ShoppingcartService, private orderService: OrdersService) { }
 
   ngOnInit() {
     this.products = this.ShoppingCartService.getCartProducts()
@@ -25,9 +27,9 @@ export class ReservationComponent implements OnInit {
       return this.products.map(product => product.price * product.quantity).reduce((acc, val) => acc + val);
   }
 
-  onReservationSubmit(){
-    this.boughtProducts = this.products
-    console.log(this.boughtProducts)
-    return this.boughtProducts
+  onSubmit(){
+    
   }
+
+
 }
