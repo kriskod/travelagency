@@ -21,7 +21,7 @@ export class TourComponent implements OnInit {
   constructor(private ShoppingCartService: ShoppingcartService, private authService: AuthService) { }
 
   ngOnInit() {
-    this.authService.showActiveUser()
+    
   }
 
   onProductRemoved() {
