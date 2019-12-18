@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { FireDbUsersService } from '../services/fire-db-users.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private userService: FireDbUsersService) { }
 
   loginForm: FormGroup
 
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
     let password = this.f["password"].value
     this.authService.login({ email, password }).then(
       auth => {
-        // this.authService.isAdmin()
+        this.authService.isAdmin(this.authService.getCurrentUser())
         console.log(auth)
         this.router.navigateByUrl('/app')
       }

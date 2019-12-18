@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/index';
 import { Role } from '../models/role.model';
 import { UserService } from './user.service';
 import { map } from 'rxjs/operators';
+import { FireDbUsersService } from './fire-db-users.service';
 
 export interface Credentials {
   email: string;
@@ -20,8 +21,9 @@ export class AuthService {
 
   readonly authState$: Observable<User | null> = this.fireAuth.authState;
 
-  constructor(private userService: UserService, private fireAuth: AngularFireAuth) { }
+  constructor(private userService: UserService, private fireAuth: AngularFireAuth, private userDbService: FireDbUsersService) { }
 
+  users: UserStructure[] 
   private activeUser: UserStructure;
   private admin = false;
 
@@ -41,32 +43,16 @@ export class AuthService {
     return this.fireAuth.auth.signOut();
   }
 
-  // getUserRole() {
-  //   if (this.activeUser) {
-  //     return this.userService.getUserEmail(this.user.email).subscribe(user => user.role)
-  //   }
-  //   else {
-  //     return this.activeUser.role
-  //   }
-  // }
-
-  // getcurrentUser() {
-  //   if(!this.activeUser){
-  //     return this.userService.getUserEmail(this.user.email)
-  //   }
-  //   else {
-  //     return this.activeUser
-  //   }
-  // }
-
-  isAdmin(){
-    if(this.activeUser.role === 'Admin'){
-      this.admin = true;
-      return this.admin
+  getCurrentUser(){
+    this.activeUser = this.users.find(user => 
+      user.email == this.user.email
+       )
+       return this.activeUser
     }
-    else {
-      console.log("Podany użytkownik nie ma uprawnień administratora")
-    }
+
+  isAdmin(user: UserStructure){
+    if(user.role == Role.Admin)
+    return this.admin = true;
   }
 }
 

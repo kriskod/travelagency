@@ -4,6 +4,7 @@ import { tourStructure } from '../models/tourStructure.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserStructure } from '../models/user.model';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'

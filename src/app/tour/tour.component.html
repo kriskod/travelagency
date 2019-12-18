@@ -34,7 +34,7 @@
                     <button class="btn btn-success onHover" (click)="onCartAdded(product)">Dodaj do koszyka</button>
                 </div>
                 <div class="mt-2 mb-3">
-                    <button class="btn btn-danger onHover" (click)="onProductRemoved()">Usuń</button>
+                    <button class="btn btn-danger onHover" (click)="onProductRemoved()" *ngIf="user.role === Role.Admin">Usuń</button>
                 </div>
             </div>
         </div>
