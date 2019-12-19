@@ -14,11 +14,12 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router, private userService: FireDbUsersService) { }
 
   loginForm: FormGroup
+  submitted = false;
 
   ngOnInit() {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     })
   }
 
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   logIn() {
+    this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }

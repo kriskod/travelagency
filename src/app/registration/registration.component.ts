@@ -21,16 +21,18 @@ export class RegistrationComponent implements OnInit {
   ) { }
 
   registerForm: FormGroup
+  submitted = false;
 
   ngOnInit() {
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.maxLength(12)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]),
-      confirmPassword: new FormControl('', [Validators.required])
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new FormControl('', [Validators.required]),
+      acceptTerms: new FormControl([false, Validators.requiredTrue])
     },
       {
-        validators: this.checkPasswords
+        validators: this.checkPasswords,
       })
   }
 
@@ -46,16 +48,21 @@ export class RegistrationComponent implements OnInit {
   }
 
   onRegistered() {
-    if (this.registerForm.valid) {
-      this.authService.register({ email: this.f.email.value, password: this.f.password.value }).then(
-        resolve => {
-          console.log(resolve)
-          this.fireDbUserService.addUser({_id: "",username: this.f.name.value, email: this.f.email.value, role: Role.User })
-          this.router.navigate['/logowanie']
-        })
-    } else {
-      window.alert('Hasła nie są takie same!')
+    this.submitted = true
+    if (this.registerForm.invalid) {
+      return;
     }
+
+    this.authService.register({ email: this.f.email.value, password: this.f.password.value }).then(
+      resolve => {
+        console.log(resolve)
+        this.fireDbUserService.addUser({ _id: "", username: this.f.name.value, email: this.f.email.value, role: Role.User })
+        this.router.navigate['/logowanie']
+      })
+      .catch((err) =>
+        window.alert(err))
   }
 }
+
+
 

@@ -8,66 +8,73 @@
                         <div class="col-md-7">
                             <div class="row">
                                 <label>Nazwa użytkownika* </label>
-                                <input #name type="text" class="form-control" formControlName="name">
-                                <div *ngIf="name.invalid && name.touched" class="invalid-feedback">
-                                    <div *ngIf="name.errors.maxLength">
-                                        Maksymalnie 12 znaków
-                                    </div>
+                                <input #name type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.name.errors.required">Podaj nazwę użytkownika</div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <label>Email* </label>
-                                <input #email type="email" class="form-control" formControlName="email">
-                                <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
-                                    <div *ngIf="email.errors.required">
-                                        Podaj prawidłowy email
+                                <input #email type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">
+                                        Podaj email
+                                    </div>
+                                    <div *ngIf="f.email.errors.email">
+                                        Nieprawidłowy format
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <label>Hasło* </label>
-                                <input #password type="password" class="form-control" formControlName="password">
-                                <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
-                                    <div *ngIf="password.errors.maxLength">
-                                        Maksymalnie 10 znaków
+                                <input #password type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">
+                                        Podaj hasło
                                     </div>
-                                    <div *ngIf="password.errors.minLength">
-                                        Minimalnie 6 znaków
-                                    </div>
-                                    <div *ngIf="password.errors.required">
-                                        Stwórz hasło
+                                    <div *ngIf="f.password.errors.minLength">
+                                        Hasło musi mieć co najmniej 6 znaków
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <label>Potwierdź hasło* </label>
-                                <input #confirmPassword type="password" class="form-control" formControlName="confirmPassword">
-                                <div *ngIf="password.invalid && password.touched" class="alert alert-danger">
-                                    <div *ngIf="password !== confirmPassword">
-                                        Hasła nie są takie same
+                                <input #confirmPassword type="password" class="form-control" formControlName="confirmPassword" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                                <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                    <div *ngIf="f.confirmPassword.errors.required">
+                                        Potwierdź hasło
+                                    </div>
+                                    <div *ngIf="f.confirmPassword.errors.mustMatch">
+                                        Hasła muszą być takie same
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="form-check form-check-inline">
-                                    <input class="larger mr-3" type="checkbox" required name="terms"> *Zapoznałem się i akceptuje regulamin korzystania z Podróżuj z Krzychem
+                                    <input class="larger mr-3" type="checkbox" name="terms"> *Zapoznałem się i akceptuje regulamin korzystania z Podróżuj z Krzychem
                                 </div>
-                                <button class="btn btn-group mt-2" routerLink="/app/regulamin">Czytaj więcej</button>
+                                <button class="btn btn-group mt-2" routerLink="/app/regulamin">
+                                Czytaj więcej
+                            </button>
 
-                            </div>
-
-                            <div class="row mt-2">
-                                <button class="btn btn-success" (click)="onRegistered()" routerLink="/logowanie">Zarejestruj</button>
-                            </div>
-                            <div class="row mt-3">
-                                <p>Masz już konto?</p>
-                            </div>
-                            <div class="row mt-1">
-                                <button class="btn btn-info" routerLink="/logowanie">Zaloguj</button>
                             </div>
                         </div>
-                    </form>
+                        <div class="row mt-2">
+                            <button class="btn btn-success" (click)="onRegistered()" routerLink="/logowanie">
+                                Zarejestruj
+                            </button>
+                        </div>
+                        <div class="row mt-3">
+                            <p>Masz już konto?</p>
+                        </div>
+                        <div class="row mt-1">
+                            <button class="btn btn-info" routerLink="/logowanie">
+                                Zaloguj
+                            </button>
+                        </div>
 
+                    </form>
                 </div>
             </div>
         </div>
