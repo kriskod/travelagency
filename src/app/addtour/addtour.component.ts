@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Inject } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { tourStructure } from '../models/tourStructure.model';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 

@@ -21,7 +21,7 @@
                 <tr>
 
                     <th><img src="assets/malediwy.jpg" height="100" width="150" /></th>
-                    <th class="clickable" [routerLink]="['/szczegóły-wycieczki/', product.id]" routerLinkActive="router-link-active">{{product.name}}</th>
+                    <th><p class="clickable" [routerLink]="['/app/szczegoly-wycieczki', product.id]" routerLinkActive="router-link-active">{{product.name}}</p></th>
                     <th *ngIf="product.leftSeats > 0 else noMorePlaces">Tak</th>
                     <th><input class="form-control" [(ngModel)]="product.quantity" type="number" min="0" max="{{product.leftSeats}}" /></th>
 
