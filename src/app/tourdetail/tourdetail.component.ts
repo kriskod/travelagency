@@ -6,12 +6,14 @@ import { ShoppingcartService } from '../services/shoppingcart.service';
 import { CurrencyPipe } from '../pipes/currency.pipe';
 import { NgxSpinnerService } from "ngx-spinner";
 import { FireDbToursService } from '../services/fire-db-tours.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-tourdetail',
   templateUrl: './tourdetail.component.html',
   styleUrls: ['./tourdetail.component.css']
 })
+
 export class TourdetailComponent implements OnInit {
 
   private tour: tourStructure

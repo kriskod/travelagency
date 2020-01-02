@@ -9,10 +9,10 @@ export class OrdersService {
 
   constructor(private db: AngularFireDatabase) { }
 
-  getToursFromReservation(order: Order) {
-    let orderID = this.db.createPushId();
-    order.tour_id = orderID;
-    return this.db.object(`/orders/${orderID}`).set(order);
-  }
+  // getToursFromReservation(order: Order) {
+  //   let orderID = this.db.createPushId();
+  //   order.tour_id = orderID;
+  //   return this.db.object(`/orders/${orderID}`).set(order);
+  // }
 
 }
