@@ -9,32 +9,29 @@
   <div class="collapse navbar-collapse text-center" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item m-auto">
-        <a class="nav-link clickable" routerLink="strona-glowna" routerLinkActive="active">Strona Główna</a>
+        <a class="nav-link clickable mainpage" routerLink="strona-glowna" routerLinkActive="active">Strona Główna</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link clickable" routerLink="lista-wycieczek" routerLinkActive="active">Oferta</a>
+        <a class="nav-link clickable tourlist" routerLink="lista-wycieczek" routerLinkActive="active">Oferta</a>
       </li>
       <li class="nav-item" *ngIf="isAdmin">
-        <a class="nav-link clickable" (click)="onDialogOpened()">Dodaj wycieczke</a>
+        <a class="nav-link clickable addtour" (click)="onDialogOpened()">Dodaj Wycieczke</a>
       </li>
     </ul>
     <div class="row">
       <div class="col">
         <div ngbDropdown class="d-inline-block">
-          <button class="btn btn-outline-info" id="dropdownBasic1" ngbDropdownToggle>{{user.username}}</button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="btn btn-outline-info" id="dropdownOptions" ngbDropdownToggle>{{user.username}}</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownOptions">
             <button ngbDropdownItem routerLink="ustawienia">Ustawienia</button>
             <button ngbDropdownItem routerLink="historia">Historia zamówień</button>
             <button ngbDropdownItem routerLink="admin" *ngIf="isAdmin">Panel administratora</button>
-            <button ngbDropdownItem (click)="logoutUser()">Wyloguj</button>
+            <button ngbDropdownItem  (click)="logoutUser()" id="signOut">Wyloguj</button>
           </div>
         </div>
       </div>
-      <!-- <div class="col">
-                <button class="btn btn-info" routerLink="/admin">Admin</button>
-            </div> -->
       <form class="form-inline my-2 my-lg-0 mx-lg-3">
-        <a class="btn btn-success btn-md clickable" routerLink="/app/koszyk" routerLinkActive="active">
+        <a class="btn btn-success btn-md clickable cart" routerLink="/app/koszyk" routerLinkActive="active">
           <i class="fa fa-shopping-cart"></i> Koszyk
           <span class="badge badge-light">{{cartProductCount}}</span>
         </a>

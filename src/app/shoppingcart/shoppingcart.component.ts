@@ -21,7 +21,7 @@ export class ShoppingcartComponent implements OnInit {
 
   // //Usuwanie produktu z  koszyka
   removeFromCart(product: tourStructure) {
-    window.alert('Usunięto z koszyka')
+    //window.alert('Usunięto z koszyka')
     this.ShoppingCartService.removeProductFromCart(product)
   }
 

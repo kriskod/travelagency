@@ -9,7 +9,7 @@
         Filtr
       </button>
     </div>
-    <div class="col-xl">
+    <div class="col-xl" id="tourList">
       <app-tour [tour]="tour" *ngFor="let tour of tours | filter: searchTerm" (removeTour)="removeProduct(tour)">
       </app-tour>
     </div>

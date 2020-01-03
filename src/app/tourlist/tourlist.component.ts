@@ -62,7 +62,6 @@ export class TourlistComponent implements OnInit {
 
   onSearch(searchTerm: string) {
     this.searchTerm = searchTerm
-
   }
 
 }

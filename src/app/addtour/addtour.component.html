@@ -5,22 +5,22 @@
     <div class="row">
         <div class="col-md-6">
             <label>Nazwa wycieczki: </label>
-            <input #name type="text" class="form-control" formControlName="name">
+            <input id="name" type="text" class="form-control" formControlName="name">
         </div>
         <div class="col-md-6">
             <label>Kraj: </label>
-            <input #destination type="text" class="form-control" formControlName="destinationCountry">
+            <input id="destination" type="text" class="form-control" formControlName="destinationCountry">
         </div>
     </div>
 
     <div class="row mt-3">
         <div class="col-md-6">
             <label>Data wylotu: </label>
-            <input #startDate type="date" class="form-control" formControlName="startDate">
+            <input id="startDate" type="date" class="form-control" formControlName="startDate">
         </div>
         <div class="col-md-6">
             <label>Data powrotu: </label>
-            <input #finishDate type="date" class="form-control" formControlName="finishDate">
+            <input id="finishDate" type="date" class="form-control" formControlName="finishDate">
 
         </div>
     </div>
@@ -28,11 +28,11 @@
     <div class="row mt-3">
         <div class="col-md-6">
             <label>Cena wycieczki: </label>
-            <input #price type="number" class="form-control" formControlName="price">
+            <input id="price" type="number" class="form-control" formControlName="price">
         </div>
         <div class="col-md-6">
             <label>Ilość miejsc: </label>
-            <input #maxSeats type="number" class="form-control" formControlName="maxSeats">
+            <input id="maxSeats" type="number" class="form-control" formControlName="maxSeats">
         </div>
     </div>
 
@@ -40,7 +40,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label>Opis: </label>
-                <textarea #description type="text" class="form-control" rows="4" formControlName="description"></textarea>
+                <textarea id="description" type="text" class="form-control" rows="4" formControlName="description"></textarea>
             </div>
         </div>
     </div>

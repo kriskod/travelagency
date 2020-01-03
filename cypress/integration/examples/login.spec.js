@@ -8,14 +8,14 @@ describe('Logging into application', function () {
         cy.contains('Powrót')
     })
 
-    it('Check invalid inputs of user data', function () {
+    it('Check both invalid email and password', function () {
         cy.get('.email').type('fake@mail.com')
             .should('have.value', 'fake@mail.com')
 
         cy.get('.password').type('123')
             .should('have.value', '123')
         cy.contains('Zaloguj').click()
-        cy.pause()
+
     })
 
     it('Clear invalid inputs', function () {
@@ -30,7 +30,7 @@ describe('Logging into application', function () {
         cy.get('.password').type('123456789')
             .should('have.value', '123456789')
         cy.contains('Zaloguj').click()
-        cy.pause()
+
     })
 
     it('Clear invalid email and password', function () {
@@ -45,8 +45,7 @@ describe('Logging into application', function () {
         cy.get('.password').type('1234567')
             .should('have.value', '1234567')
         cy.contains('Zaloguj').click()
-        cy.pause()
-        
+
     })
 
     it('Clear invalid email and password', function () {
@@ -64,6 +63,8 @@ describe('Logging into application', function () {
     })
 
     it('Loging out an user'), function () {
-        cy.contains('Wyloguj').click()
+        cy.get('.dropdown-menu').click()
+        cy.get('#dropdownOptions').first().click()
+        cy.get('#signOut').click()
     }
 })

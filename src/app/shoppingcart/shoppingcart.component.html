@@ -27,7 +27,7 @@
 
                     <th>{{product.price * product.quantity}} {{product.currency | currency}} zł</th>
                     <th>
-                        <button class="btn btn-sm btn-danger" (click)="removeFromCart(product)">
+                        <button class="btn btn-sm btn-danger remove" (click)="removeFromCart(product)">
                             <i class="fa fa-trash"></i>
                         </button>
                     </th>

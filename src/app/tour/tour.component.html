@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-4 mt-2" id="info">
                 <div class="information">
-                    <h3 class="clickable" style="cursor: pointer;" [routerLink]="['/app/szczegoly-wycieczki', tour.id]">
+                    <h3 class="clickable title" style="cursor: pointer;" [routerLink]="['/app/szczegoly-wycieczki', tour.id]">
                         {{tour?.name || uppercase}}</h3>
                     <p>Kraj: {{tour?.destinationCountry}}</p>
                     <p>{{tour?.startDate | date:'yyyy/MM/dd'}} - {{tour?.finishDate | date:'yyyy/MM/dd'}}</p>
@@ -31,10 +31,10 @@
                 <button [ngStyle]="{'visibility': (tour.leftSeats > 0 ? 'visible' : 'hidden')}" class="btn btn-primary onHover" (click)="onTourBooked()" style="width: 50px;">+</button>
                 <button [ngStyle]="{'visibility': (tour.leftSeats < tour.maxSeats ? 'visible' : 'hidden')}" class="btn btn-primary onHover" (click)="onTourCancelled()" style="width: 50px;">-</button>
                 <div class="mt-2">
-                    <button class="btn btn-success onHover p-3" (click)="onCartAdded(product)">Dodaj do koszyka</button>
+                    <button class="btn btn-success onHover p-3 toCart" (click)="onCartAdded(product)">Dodaj do koszyka</button>
                 </div>
                 <div class="mt-2 mb-3">
-                    <button class="btn btn-danger onHover" (click)="onProductRemoved()" *ngIf="isAdmin">Usuń</button>
+                    <button class="btn btn-danger onHover deleteTour" (click)="onProductRemoved()" >Usuń</button>
                 </div>
             </div>
         </div>
