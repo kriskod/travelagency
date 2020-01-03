@@ -1,5 +1,5 @@
 describe('Logging into application', function () {
-    it('Navigates to login page', function () {
+    it('Navigates to login page', () => {
         cy.visit('http://localhost:4200/logowanie')
         cy.url()
             .should('include', '/logowanie')
@@ -8,7 +8,7 @@ describe('Logging into application', function () {
         cy.contains('Powrót')
     })
 
-    it('Check both invalid email and password', function () {
+    it('Check both invalid email and password', () =>{
         cy.get('.email').type('fake@mail.com')
             .should('have.value', 'fake@mail.com')
 
@@ -18,12 +18,12 @@ describe('Logging into application', function () {
 
     })
 
-    it('Clear invalid inputs', function () {
-        cy.get('.email').type('fake@mail.com').clear()
-        cy.get('.password').type('123').clear()
+    it('Clear invalid inputs', () => {
+        cy.get('.email').clear()
+        cy.get('.password').clear()
     })
 
-    it('Check invalid email', function () {
+    it('Check invalid email', () => {
         cy.get('.email').type('adminekmail.com')
             .should('have.value', 'adminekmail.com')
 
@@ -33,12 +33,12 @@ describe('Logging into application', function () {
 
     })
 
-    it('Clear invalid email and password', function () {
-        cy.get('.email').type('adminekmail.com').clear()
-        cy.get('.password').type('123456789').clear()
+    it('Clear invalid email and password', () => {
+        cy.get('.email').clear()
+        cy.get('.password').clear()
     })
 
-    it('Check invalid password', function () {
+    it('Check invalid password', () => {
         cy.get('.email').type('adminek@mail.com')
             .should('have.value', 'adminek@mail.com')
 
@@ -48,12 +48,12 @@ describe('Logging into application', function () {
 
     })
 
-    it('Clear invalid email and password', function () {
-        cy.get('.email').type('adminek@mail.com').clear()
-        cy.get('.password').type('1234567').clear()
+    it('Clear invalid email and password',  () =>{
+        cy.get('.email').clear()
+        cy.get('.password').clear()
     })
 
-    it('Check is user is in base, logging with correct data', function () {
+    it('Check is user is in base, logging with correct data', () => {
         cy.get('.email').type('adminek@mail.com')
             .should('have.value', 'adminek@mail.com')
 
@@ -62,9 +62,8 @@ describe('Logging into application', function () {
         cy.contains('Zaloguj').click()
     })
 
-    it('Loging out an user'), function () {
-        cy.get('.dropdown-menu').click()
-        cy.get('#dropdownOptions').first().click()
-        cy.get('#signOut').click()
-    }
+    it('Check if user can be logged out', () => {
+        cy.get('.dropdown-toggle').click()
+        //cy.get('.signout').click()
+    })
 })

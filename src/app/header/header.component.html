@@ -25,8 +25,8 @@
           <div ngbDropdownMenu aria-labelledby="dropdownOptions">
             <button ngbDropdownItem routerLink="ustawienia">Ustawienia</button>
             <button ngbDropdownItem routerLink="historia">Historia zamówień</button>
-            <button ngbDropdownItem routerLink="admin" *ngIf="isAdmin">Panel administratora</button>
-            <button ngbDropdownItem  (click)="logoutUser()" id="signOut">Wyloguj</button>
+            <button ngbDropdownItem routerLink="admin" *ngIf="isAdmin" class="admin">Panel administratora</button>
+            <button ngbDropdownItem  (click)="logoutUser()" class="signout">Wyloguj</button>
           </div>
         </div>
       </div>
