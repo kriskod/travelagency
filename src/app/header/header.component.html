@@ -24,7 +24,7 @@
           <button class="btn btn-outline-info" id="dropdownOptions" ngbDropdownToggle>{{user.username}}</button>
           <div ngbDropdownMenu aria-labelledby="dropdownOptions">
             <button ngbDropdownItem routerLink="ustawienia">Ustawienia</button>
-            <button ngbDropdownItem routerLink="historia">Historia zamówień</button>
+            <button ngbDropdownItem routerLink="zamowienia">Historia zamówień</button>
             <button ngbDropdownItem routerLink="admin" *ngIf="isAdmin" class="admin">Panel administratora</button>
             <button ngbDropdownItem  (click)="logoutUser()" class="signout">Wyloguj</button>
           </div>

@@ -37,6 +37,8 @@ import { AdminComponent } from './admin/admin.component';
 import { MaterialModule } from './models/material.module';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     RegulationsComponent,
     AdminComponent,
     ProgressSpinnerComponent,
+    OrderHistoryComponent,
+    UserSettingsComponent,
   ],
   imports: [
     BrowserModule,

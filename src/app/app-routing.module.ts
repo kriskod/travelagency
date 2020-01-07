@@ -13,6 +13,8 @@ import { RegulationsComponent } from './regulations/regulations.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { AuthGuard } from './services/auth-guard';
 import { AdminComponent } from './admin/admin.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,8 @@ const routes: Routes = [
       { path: 'regulamin', component: RegulationsComponent },
       { path: 'strona-glowna', component: MainPageComponent},
       { path: 'admin', component: AdminComponent},
+      { path: 'zamowienia', component: OrderHistoryComponent},
+      { path: 'ustawienia', component: UserSettingsComponent},
     ]
   },
 ];

@@ -1,0 +1,34 @@
+<div class="containter">
+    <div class="card">
+        <div class="card-header text-center">
+            <h3>Historia zamówień</h3>
+        </div>
+        <hr>
+        <div class="card-body text-center">
+            <div class="flex-row justify-content-center">
+                <div>
+                    <table class="fixed table table-striped col-xl-12 text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col-md" *ngIf="isAdmin">id</th>
+                                <th scope="col-md">Nazwa</th>
+                                <th scope="col-md">Kraj</th>
+                                <th scope="col-md">Cena</th>
+                                <th scope="col-md">Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let tour of tours">
+                                <th scope="row">{{tour.id}}</th>
+                                <td>{{tour.name}}</td>
+                                <td>{{tour.destinationCountry}}</td>
+                                <td>{{tour.price}} zł</td>
+                                <td>{{tour.startDate - tour.finishDate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
